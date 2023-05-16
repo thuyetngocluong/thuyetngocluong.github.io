@@ -1,0 +1,10 @@
+{
+  "applinks": {
+      "details": [
+           {
+             "appID": "5J3U89Q793.zoro4rk.app.PhysicsFormulaApp",
+             "paths": [ "*" ]
+           }
+       ]
+   }
+}
