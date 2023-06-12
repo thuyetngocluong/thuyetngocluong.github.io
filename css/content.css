@@ -1,0 +1,39 @@
+
+div.content {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+div.content-tab {
+    width: 100%;
+    background-color: white;
+}
+
+
+button.content-tab-button {
+    width: 49%;
+    background-color: white;
+    color: black;
+    height: 40px;
+    border-width: 0px;
+    border-radius: 5px;
+}
+
+button.content-tab-button-active {
+    width: 49%;
+    background-color: green;
+    color: white;
+    height: 40px;
+    border-width: 0px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: green;
+    color: white;
+}
