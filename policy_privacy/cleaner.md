@@ -1,10 +1,10 @@
 **Privacy Policy**
 
-Effective Date: [Insert Date]
+Effective Date: [26/12/2024]
 
 **Introduction**
 
-Thank you for choosing [App Name] ("we," "our," or "us"). Your privacy is important to us, and we are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Clean Duplicates Photo app (the "App").
+Thank you for choosing Cleanup CleanGuru ("we," "our," or "us"). Your privacy is important to us, and we are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Clean Duplicates Photo app (the "App").
 
 By using the App, you agree to the practices described in this Privacy Policy. If you do not agree with this policy, please do not use the App.
 
@@ -92,10 +92,7 @@ We may update this Privacy Policy from time to time to reflect changes in our pr
 
 If you have questions or concerns about this Privacy Policy or our data practices, please contact us at:
 
-[Your Company Name]  
-[Your Address, if applicable]  
-[Your Support Email Address]  
-[Your Support Phone Number, if applicable]
+thuyetngocluong@gmail.com
 
 ---
 
