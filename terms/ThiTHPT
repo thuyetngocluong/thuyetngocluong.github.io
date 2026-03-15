@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điều khoản sử dụng - ThiTHPT</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.7;
+            -webkit-text-size-adjust: 100%;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            padding: 40px 20px 32px;
+            text-align: center;
+        }
+        .header h1 {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+        .container {
+            max-width: 680px;
+            margin: -16px auto 40px;
+            padding: 0 16px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .card h2 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card h2 .num {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: #fff;
+            width: 28px; height: 28px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+        .card p, .card li {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 8px;
+        }
+        .card ul {
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+        .card li { margin-bottom: 4px; }
+        .contact {
+            text-align: center;
+            padding: 24px 20px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .contact a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .footer {
+            text-align: center;
+            padding: 24px 16px;
+            font-size: 13px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Điều khoản sử dụng</h1>
+    <p>Cập nhật lần cuối: 15/03/2026</p>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h2><span class="num">1</span> Giới thiệu</h2>
+        <p>Chào mừng bạn đến với <strong>ThiTHPT</strong> — ứng dụng ôn luyện thi THPT Quốc gia. Bằng việc tải xuống, cài đặt hoặc sử dụng ứng dụng, bạn đồng ý tuân thủ các điều khoản được nêu dưới đây. Nếu không đồng ý, vui lòng ngừng sử dụng ứng dụng.</p>
+    </div>
+
+    <div class="card">
+        <h2><span class="num">2</span> Quyền sử dụng</h2>
+        <p>Chúng tôi cấp cho bạn quyền sử dụng ứng dụng có giới hạn, không độc quyền, không thể chuyển nhượng và có thể bị thu hồi, nhằm mục đích cá nhân và phi thương mại. Bạn không được:</p>
+        <ul>
+            <li>Sao chép, sửa đổi, phân phối hoặc tạo sản phẩm phái sinh từ ứng dụng.</li>
+            <li>Dịch ngược, tháo rời hoặc cố gắng truy cập mã nguồn của ứng dụng.</li>
+            <li>Sử dụng ứng dụng cho mục đích bất hợp pháp hoặc vi phạm quy định pháp luật.</li>
+            <li>Can thiệp vào hoạt động bình thường của ứng dụng hoặc máy chủ.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2><span class="num">3</span> Tài khoản người dùng</h2>
+        <p>Ứng dụng sử dụng hệ thống đăng nhập ẩn danh (anonymous). Dữ liệu học tập của bạn được lưu trữ trên thiết bị và máy chủ thông qua mã định danh duy nhất. Bạn chịu trách nhiệm bảo mật thiết bị của mình. Chúng tôi không chịu trách nhiệm cho bất kỳ mất mát dữ liệu nào do mất thiết bị, gỡ cài đặt ứng dụng hoặc các nguyên nhân nằm ngoài tầm kiểm soát của chúng tôi.</p>
+    </div>
+
+    <div class="card">
+        <h2><span class="num">4</span> Nội dung và sở hữu trí tuệ</h2>
+        <p>Toàn bộ nội dung trong ứng dụng bao gồm đề thi, câu hỏi, lời giải, hình ảnh, giao diện và mã nguồn đều thuộc quyền sở hữu của ThiTHPT hoặc các bên cấp phép. Bạn không được sao chép, phân phối hoặc sử dụng nội dung cho mục đích thương mại mà không có sự đồng ý bằng văn bản từ chúng tôi.</p>
+    </div>
+
+    <div class="card">
+        <h2><span class="num">5</span> Gói Premium và thanh toán</h2>
+        <p>ThiTHPT cung cấp các gói đăng ký Premium (tuần, tháng, năm) thông qua Apple In-App Purchase. Khi đăng ký:</p>
+        <ul>
+            <li>Thanh toán được xử lý qua tài khoản Apple ID của bạn.</li>
+            <li>Gói đăng ký tự động gia hạn trừ khi bạn hủy trước ít nhất 24 giờ trước khi kết thúc chu kỳ hiện tại.</li>
+            <li>Bạn có thể quản lý hoặc hủy đăng ký trong phần Cài đặt &gt; Apple ID &gt; Đăng ký trên thiết bị iOS.</li>
+            <li>Phần thời gian còn lại của bản dùng thử miễn phí (nếu có) sẽ bị mất khi bạn mua gói đăng ký.</li>
+        </ul>
+        <p>Chính sách hoàn tiền tuân theo quy định của Apple. Chúng tôi không trực tiếp xử lý hoàn tiền.</p>
+    </div>
+
+    <div class="card">
+        <h2><span class="num">6</span> Quảng cáo</h2>
+        <p>Phiên bản miễn phí của ứng dụng có hiển thị quảng cáo thông qua Google AdMob. Quảng cáo sẽ được loại bỏ hoàn toàn khi bạn nâng cấp lên gói Premium. Việc hiển thị quảng cáo tuân thủ chính sách quảng cáo của Google và Apple.</p>
+    </div>
+
+    <div class="card">
+        <h2><span class="num">7</span> Giới hạn trách nhiệm</h2>
+        <p>Ứng dụng được cung cấp trên cơ sở "nguyên trạng" (as-is). Chúng tôi nỗ lực đảm bảo độ chính xác của nội dung nhưng không cam kết rằng nội dung hoàn toàn không có sai sót. ThiTHPT không chịu trách nhiệm cho:</p>
+        <ul>
+            <li>Kết quả thi thực tế của người dùng.</li>
+            <li>Gián đoạn dịch vụ do lỗi kỹ thuật, bảo trì hoặc nguyên nhân bất khả kháng.</li>
+            <li>Thiệt hại trực tiếp hoặc gián tiếp phát sinh từ việc sử dụng ứng dụng.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2><span class="num">8</span> Thay đổi điều khoản</h2>
+        <p>Chúng tôi có quyền cập nhật các điều khoản này bất kỳ lúc nào. Các thay đổi sẽ có hiệu lực ngay khi được đăng tải. Việc bạn tiếp tục sử dụng ứng dụng sau khi thay đổi đồng nghĩa với việc bạn chấp nhận các điều khoản mới.</p>
+    </div>
+
+    <div class="card">
+        <h2><span class="num">9</span> Chấm dứt</h2>
+        <p>Chúng tôi có quyền tạm ngưng hoặc chấm dứt quyền truy cập của bạn vào ứng dụng nếu phát hiện hành vi vi phạm điều khoản sử dụng, mà không cần thông báo trước.</p>
+    </div>
+
+    <div class="contact">
+        <h2 style="justify-content:center;color:#1e3a8a;font-size:17px;margin-bottom:8px;">Liên hệ</h2>
+        <p style="font-size:15px;color:#475569;">Nếu bạn có câu hỏi về các điều khoản này, vui lòng liên hệ:</p>
+        <p style="margin-top:8px;"><a href="mailto:thuyetngocluong.working@gmail.com">thuyetngocluong.working@gmail.com</a></p>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 ThiTHPT. Tất cả quyền được bảo lưu.
+    </div>
+
+</div>
+
+</body>
+</html>
