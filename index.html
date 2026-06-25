@@ -1,43 +1,983 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    <link rel="stylesheet" href="css/profile.css">
-    <link rel="stylesheet" href="css/body.css">
-    <link rel="stylesheet" href="css/content.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title data-en="Thuyết Lương Ngọc — iOS Developer & Tech Lead" data-vi="Thuyết Lương Ngọc — Lập trình viên iOS & Tech Lead">Thuyết Lương Ngọc — iOS Developer & Tech Lead</title>
+<meta name="description" data-en="Thuyết Lương Ngọc (Zoro4rk) — iOS developer from Hà Nội. 7 apps on the App Store and Tech Lead for Begamob Global Limited's global portfolio." data-vi="Thuyết Lương Ngọc (Zoro4rk) — lập trình viên iOS tại Hà Nội. 7 ứng dụng trên App Store và Tech Lead cho danh mục toàn cầu của Begamob Global Limited." content="Thuyết Lương Ngọc (Zoro4rk) — iOS developer from Hà Nội." />
+<meta name="theme-color" content="#ffffff" />
+<meta property="og:title" content="Thuyết Lương Ngọc — iOS Developer & Tech Lead" />
+<meta property="og:description" content="iOS developer from Hà Nội. 7 apps on the App Store and Tech Lead for Begamob Global Limited." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/avatar.jpeg" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='26' fill='%23007AFF'/%3E%3Ctext x='50' y='70' font-family='-apple-system,Segoe UI,Roboto,sans-serif' font-size='58' font-weight='700' fill='white' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#007AFF',
+          primaryDark: '#0051D5',
+          indigo: '#5856D6',
+          ink: '#1d1d1f',
+          sub: '#6e6e73',
+          line: '#e7e7ee',
+          mist: '#f5f5f7',
+        },
+        fontFamily: {
+          sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { -webkit-text-size-adjust: 100%; }
+  body { background:#fff; color:#1d1d1f; -webkit-font-smoothing:antialiased; }
+  section { scroll-margin-top: 84px; }
+
+  .text-gradient{
+    background:linear-gradient(110deg,#007AFF 0%,#5856D6 55%,#0aa2ff 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  /* Apple-style squircle */
+  .squircle{ border-radius:24%; }
+  .squircle-lg{ border-radius:30px; }
+
+  .app-icon{
+    position:relative; overflow:hidden;
+    box-shadow:0 8px 22px rgba(0,0,0,.10);
+    border:1px solid rgba(0,0,0,.06);
+  }
+  .app-icon img{ position:relative; z-index:1; width:100%; height:100%; object-fit:cover; }
+
+  .card{
+    background:#fff;border:1px solid var(--tw-line,#e7e7ee);
+    transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  }
+  .card:hover{ transform:translateY(-6px); box-shadow:0 18px 40px rgba(2,10,40,.10); border-color:rgba(0,122,255,.35); }
+
+  .chip{ background:#fff;border:1px solid #e7e7ee; }
+
+  .nav-link{ position:relative; }
+  .nav-link::after{
+    content:'';position:absolute;left:0;bottom:-4px;height:2px;width:0;
+    background:linear-gradient(90deg,#007AFF,#5856D6);transition:width .3s ease;border-radius:2px;
+  }
+  .nav-link:hover::after{ width:100%; }
+
+  /* Language toggle */
+  .lang-seg{ background:#f0f0f5;border:1px solid #e7e7ee; }
+  .lang-btn{ color:#6e6e73;transition:all .25s ease;border-radius:9999px; }
+  .lang-btn.lang-active{ background:#fff;color:#007AFF;box-shadow:0 1px 3px rgba(0,0,0,.12);font-weight:700; }
+
+  .filter-btn{ transition:all .25s ease; }
+  .filter-btn.active{ background:#007AFF;color:#fff;border-color:#007AFF;box-shadow:0 6px 16px rgba(0,122,255,.30); }
+
+  /* Reveal on scroll */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .blob{ position:absolute; border-radius:9999px; filter:blur(90px); opacity:.5; pointer-events:none; }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1 !important; transform:none !important; transition:none; }
+    html{ scroll-behavior:auto; }
+  }
+</style>
 </head>
-<body>
-    
-<div class="profile-container">
-    <div class="profile-picture-container">
-        <img class="profile-picture" src="/assets/avatar.jpeg" alt="Profile Picture">
+
+<body class="font-sans antialiased selection:bg-primary/20">
+
+<!-- ============ NAV ============ -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b border-transparent">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6">
+    <div class="flex items-center justify-between h-16">
+      <a href="#home" class="flex items-center gap-2.5 group">
+        <span class="grid place-items-center w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-indigo text-white font-extrabold text-lg shadow-md">T</span>
+        <span class="font-bold tracking-tight text-ink">Thuyết<span class="text-sub font-medium"> Lương</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-ink/80">
+        <a href="#about"      class="nav-link hover:text-ink" data-en="About"      data-vi="Giới thiệu">About</a>
+        <a href="#experience" class="nav-link hover:text-ink" data-en="Experience" data-vi="Kinh nghiệm">Experience</a>
+        <a href="#apps"       class="nav-link hover:text-ink" data-en="Apps"       data-vi="Ứng dụng">Apps</a>
+        <a href="#web"        class="nav-link hover:text-ink" data-en="GitHub"     data-vi="GitHub">GitHub</a>
+        <a href="#contact"    class="nav-link hover:text-ink" data-en="Contact"    data-vi="Liên hệ">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <div class="lang-seg flex items-center p-0.5 rounded-full text-xs font-semibold">
+          <button data-lang-btn="en" class="lang-btn px-2.5 py-1">EN</button>
+          <button data-lang-btn="vi" class="lang-btn px-2.5 py-1">VI</button>
+        </div>
+        <a href="https://apps.apple.com/us/developer/thuyet-luong/id1655884965" target="_blank" rel="noopener"
+           class="hidden sm:inline-flex items-center gap-1.5 bg-ink text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-primary transition-colors">
+           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.14-.42 2.2-1.13 3-.84.94-2.2 1.66-3.32 1.57-.14-1.1.42-2.27 1.1-3.01.83-.94 2.27-1.62 3.35-1.56zM20.9 17.2c-.55 1.27-.82 1.84-1.53 2.97-.99 1.57-2.39 3.53-4.12 3.54-1.54.02-1.93-1-4.02-.99-2.09.01-2.52 1.01-4.06.99-1.73-.02-3.06-1.78-4.05-3.35C-.6 17.05-.92 12.07 1.2 9.42 2.4 7.9 4.27 6.95 6.02 6.95c1.78 0 2.9 1 4.37 1 1.43 0 2.3-1 4.36-1 1.56 0 3.2.85 4.37 2.32-3.84 2.1-3.22 7.58 1.78 7.93z"/></svg>
+           App Store
+        </a>
+        <button id="burger" class="md:hidden grid place-items-center w-10 h-10 rounded-lg text-ink" aria-label="Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- mobile menu -->
+  <div id="mobileMenu" class="md:hidden hidden bg-white/95 backdrop-blur border-t border-line">
+    <div class="px-5 py-3 flex flex-col text-ink font-medium">
+      <a href="#about"      class="py-2.5" data-en="About"      data-vi="Giới thiệu">About</a>
+      <a href="#experience" class="py-2.5" data-en="Experience" data-vi="Kinh nghiệm">Experience</a>
+      <a href="#apps"       class="py-2.5" data-en="Apps"       data-vi="Ứng dụng">Apps</a>
+      <a href="#web"        class="py-2.5" data-en="GitHub"     data-vi="GitHub">GitHub</a>
+      <a href="#contact"    class="py-2.5" data-en="Contact"    data-vi="Liên hệ">Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+  <div class="blob w-[460px] h-[460px] -top-24 -right-24" style="background:radial-gradient(circle,#9ec9ff,transparent 70%)"></div>
+  <div class="blob w-[420px] h-[420px] top-40 -left-24" style="background:radial-gradient(circle,#cdc9ff,transparent 70%)"></div>
+
+  <div class="max-w-6xl mx-auto px-5 sm:px-6 relative">
+    <div class="grid md:grid-cols-[1.25fr_.9fr] gap-12 md:gap-10 items-center">
+      <div class="reveal">
+        <span class="inline-flex items-center gap-2 text-[13px] font-semibold text-primary bg-primary/10 border border-primary/20 px-3.5 py-1.5 rounded-full"
+              data-en="iOS Developer · Senior" data-vi="Lập trình viên iOS · Senior">iOS Developer · Senior</span>
+
+        <h1 class="mt-5 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
+          <span class="block text-ink">Lương Ngọc Thuyết</span>
+          <span class="block text-gradient mt-1" data-en="I build polished iOS apps." data-vi="Tôi tạo ra ứng dụng iOS tinh tế.">I build polished iOS apps.</span>
+        </h1>
+
+        <p class="mt-6 text-lg text-sub max-w-xl leading-relaxed"
+           data-en="Indie developer with apps on the App Store and Tech Lead for Begamob Global Limited's global portfolio. I care about clean design, real privacy, and shipping. Based in Hà Nội, Vietnam."
+           data-vi="Nhà phát triển độc lập với nhiều ứng dụng trên App Store, đồng thời là Tech Lead cho danh mục ứng dụng toàn cầu của Begamob Global Limited. Tôi đề cao thiết kế tinh gọn, quyền riêng tư thật sự và việc đưa sản phẩm đến người dùng. Sống tại Hà Nội, Việt Nam.">
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#apps" class="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full shadow-lg shadow-primary/30 hover:bg-primaryDark transition-colors"
+             data-en="View my apps" data-vi="Xem ứng dụng">View my apps</a>
+          <a href="#contact" class="inline-flex items-center gap-2 bg-white text-ink font-semibold px-6 py-3 rounded-full border border-line hover:border-primary hover:text-primary transition-colors"
+             data-en="Get in touch" data-vi="Liên hệ">Get in touch</a>
+        </div>
+
+        <!-- socials -->
+        <div class="mt-8 flex items-center gap-3 text-sub">
+          <a href="https://github.com/thuyetngocluong" target="_blank" rel="noopener" aria-label="GitHub" class="grid place-items-center w-10 h-10 rounded-full border border-line hover:text-white hover:bg-ink hover:border-ink transition-colors">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12 11.5 11.5 0 0 0 8.4 23c.6.1.8-.26.8-.57v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.6 18 5 18 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/luongngocthuyet.hm.hh/" target="_blank" rel="noopener" aria-label="Facebook" class="grid place-items-center w-10 h-10 rounded-full border border-line hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-colors">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+          </a>
+          <a href="mailto:thuyetngocluong@gmail.com" aria-label="Email" class="grid place-items-center w-10 h-10 rounded-full border border-line hover:text-white hover:bg-primary hover:border-primary transition-colors">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- avatar -->
+      <div class="reveal flex justify-center md:justify-end">
+        <div class="relative">
+          <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-primary/30 to-indigo/30 blur-xl"></div>
+          <div class="relative p-1.5 rounded-[2rem] bg-gradient-to-br from-primary to-indigo shadow-2xl">
+            <img src="assets/avatar.jpeg" alt="Lương Ngọc Thuyết" class="w-60 h-60 sm:w-72 sm:h-72 object-cover rounded-[1.7rem]" />
+          </div>
+          <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl border border-line px-4 py-3 flex items-center gap-2">
+            <span class="grid place-items-center w-9 h-9 rounded-xl bg-primary/10 text-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.14-.42 2.2-1.13 3-.84.94-2.2 1.66-3.32 1.57-.14-1.1.42-2.27 1.1-3.01.83-.94 2.27-1.62 3.35-1.56zM20.9 17.2c-.55 1.27-.82 1.84-1.53 2.97-.99 1.57-2.39 3.53-4.12 3.54-1.54.02-1.93-1-4.02-.99-2.09.01-2.52 1.01-4.06.99-1.73-.02-3.06-1.78-4.05-3.35C-.6 17.05-.92 12.07 1.2 9.42 2.4 7.9 4.27 6.95 6.02 6.95c1.78 0 2.9 1 4.37 1 1.43 0 2.3-1 4.36-1 1.56 0 3.2.85 4.37 2.32-3.84 2.1-3.22 7.58 1.78 7.93z"/></svg>
+            </span>
+            <div class="leading-tight">
+              <p class="text-xs text-sub" data-en="Building since" data-vi="Phát triển từ">Building since</p>
+              <p class="text-sm font-bold text-ink">2022</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="profile-info">
-      <div>
-        <p><b class="profile-info-name">Thuyet Luong Ngoc</b><br/>iOS Developer</p>
+    <!-- stats -->
+    <div class="reveal mt-16 grid grid-cols-3 gap-4 max-w-2xl">
+      <div class="text-center sm:text-left">
+        <p class="text-3xl sm:text-4xl font-extrabold text-ink">25<span class="text-primary">+</span></p>
+        <p class="text-sm text-sub mt-1" data-en="Apps shipped" data-vi="Ứng dụng đã ra mắt">Apps shipped</p>
       </div>
-      <div>
-        <a href="https://www.facebook.com/luongngocthuyet.hm.hh/" target="_blank"><img src="/assets/facebook.png" width="20" height="20"></a>
-        <a href="https://github.com/thuyetngocluong" target="_blank"><img src="/assets/github.png" width="20" height="20"></a>
+      <div class="text-center sm:text-left border-x border-line">
+        <p class="text-3xl sm:text-4xl font-extrabold text-ink">169K<span class="text-primary">+</span></p>
+        <p class="text-sm text-sub mt-1" data-en="App Store ratings" data-vi="Lượt đánh giá App Store">App Store ratings</p>
+      </div>
+      <div class="text-center sm:text-left">
+        <p class="text-3xl sm:text-4xl font-extrabold text-ink">4.7<span class="text-primary">★</span></p>
+        <p class="text-sm text-sub mt-1" data-en="Avg. team rating" data-vi="Đánh giá TB của team">Avg. team rating</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="py-20 md:py-28 bg-mist">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6">
+    <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+      <div class="reveal">
+        <p class="text-sm font-semibold tracking-widest uppercase text-primary" data-en="About me" data-vi="Về tôi">About me</p>
+        <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight text-ink leading-tight"
+            data-en="An iOS engineer who loves shipping." data-vi="Một kỹ sư iOS đam mê tạo ra sản phẩm.">An iOS engineer who loves shipping.</h2>
+        <p class="mt-6 text-sub leading-relaxed"
+           data-en="I'm Thuyết — an iOS developer from Hà Nội and a graduate of Hanoi University of Science and Technology (HUST). Since 2022 I've designed and published my own apps on the App Store: diaries, countdowns, exam prep, QR tools and storage cleaners — always with clean design and genuine, on-device privacy."
+           data-vi="Mình là Thuyết — lập trình viên iOS tại Hà Nội, tốt nghiệp Đại học Bách Khoa Hà Nội (HUST). Từ năm 2022, mình tự thiết kế và phát hành các ứng dụng của riêng mình trên App Store: nhật ký, đếm ngược, ôn thi, công cụ QR và dọn dẹp bộ nhớ — luôn chú trọng thiết kế tinh gọn và quyền riêng tư thật sự, xử lý ngay trên thiết bị."></p>
+        <p class="mt-4 text-sub leading-relaxed"
+           data-en="Today I work as a Tech Lead, guiding iOS development for Begamob Global Limited's global app portfolio — from AI-powered consumer apps to productivity and utilities used by hundreds of thousands of people."
+           data-vi="Hiện tại mình là Tech Lead, dẫn dắt mảng phát triển iOS cho danh mục ứng dụng toàn cầu của Begamob Global Limited — từ các ứng dụng AI cho người dùng phổ thông đến các app năng suất, tiện ích được hàng trăm nghìn người sử dụng."></p>
+      </div>
+
+      <div class="reveal grid grid-cols-2 gap-4">
+        <div class="card squircle-lg p-5">
+          <span class="grid place-items-center w-11 h-11 rounded-xl bg-primary/10 text-primary mb-3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.35-7-10a7 7 0 0 1 14 0c0 5.65-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+          </span>
+          <p class="text-xs text-sub" data-en="Location" data-vi="Địa điểm">Location</p>
+          <p class="font-bold text-ink">Hà Nội, Việt Nam</p>
+        </div>
+        <div class="card squircle-lg p-5">
+          <span class="grid place-items-center w-11 h-11 rounded-xl bg-indigo/10 text-indigo mb-3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>
+          </span>
+          <p class="text-xs text-sub" data-en="Education" data-vi="Học vấn">Education</p>
+          <p class="font-bold text-ink">HUST · Bách Khoa HN</p>
+        </div>
+        <div class="card squircle-lg p-5">
+          <span class="grid place-items-center w-11 h-11 rounded-xl bg-primary/10 text-primary mb-3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          </span>
+          <p class="text-xs text-sub" data-en="Role" data-vi="Vai trò">Role</p>
+          <p class="font-bold text-ink">Senior · iOS</p>
+        </div>
+        <div class="card squircle-lg p-5">
+          <span class="grid place-items-center w-11 h-11 rounded-xl bg-indigo/10 text-indigo mb-3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
+          </span>
+          <p class="text-xs text-sub" data-en="Indie brand" data-vi="Thương hiệu">Indie brand</p>
+          <p class="font-bold text-ink">Zoro4rk</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- what I do -->
+    <div class="mt-16 grid md:grid-cols-3 gap-5">
+      <div class="reveal card squircle-lg p-6">
+        <span class="grid place-items-center w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-indigo text-white mb-4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+        </span>
+        <h3 class="font-bold text-ink text-lg" data-en="iOS App Development" data-vi="Phát triển ứng dụng iOS">iOS App Development</h3>
+        <p class="mt-2 text-sm text-sub leading-relaxed" data-en="Native apps with Swift & SwiftUI — widgets, iCloud sync, in-app purchases, notifications and more." data-vi="Ứng dụng native bằng Swift & SwiftUI — widget, đồng bộ iCloud, mua trong ứng dụng, thông báo và hơn thế nữa."></p>
+      </div>
+      <div class="reveal card squircle-lg p-6">
+        <span class="grid place-items-center w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo to-primary text-white mb-4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+        </span>
+        <h3 class="font-bold text-ink text-lg" data-en="Architecture & Leadership" data-vi="Kiến trúc & Dẫn dắt">Architecture &amp; Leadership</h3>
+        <p class="mt-2 text-sm text-sub leading-relaxed" data-en="MVVM / Clean architecture, code review, mentoring and shipping quality at scale as a Tech Lead." data-vi="Kiến trúc MVVM / Clean, review code, mentoring và đảm bảo chất lượng ở quy mô lớn với vai trò Tech Lead."></p>
+      </div>
+      <div class="reveal card squircle-lg p-6">
+        <span class="grid place-items-center w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-indigo text-white mb-4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 9h20M8 21h8"/></svg>
+        </span>
+        <h3 class="font-bold text-ink text-lg" data-en="Web Landing Pages" data-vi="Trang web giới thiệu">Web Landing Pages</h3>
+        <p class="mt-2 text-sm text-sub leading-relaxed" data-en="Fast, elegant marketing sites with HTML, Tailwind CSS and a touch of motion." data-vi="Trang giới thiệu nhanh, tinh tế bằng HTML, Tailwind CSS và một chút chuyển động."></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6">
+    <div class="reveal max-w-2xl">
+      <p class="text-sm font-semibold tracking-widest uppercase text-primary" data-en="Experience" data-vi="Kinh nghiệm">Experience</p>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight text-ink" data-en="Where I've made an impact" data-vi="Nơi mình tạo ra dấu ấn">Where I've made an impact</h2>
+    </div>
+
+    <div class="mt-10 grid lg:grid-cols-5 gap-5">
+      <!-- Tech Lead card -->
+      <div class="reveal card squircle-lg p-7 lg:col-span-3">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="text-xl font-bold text-ink" data-en="Tech Lead — iOS" data-vi="Tech Lead — iOS">Tech Lead — iOS</h3>
+            <p class="text-primary font-semibold">Begamob Global Limited · iKame Global</p>
+          </div>
+          <span class="shrink-0 text-xs font-semibold text-sub bg-mist border border-line px-3 py-1 rounded-full" data-en="Present" data-vi="Hiện tại">Present</span>
+        </div>
+        <p class="mt-4 text-sub leading-relaxed"
+           data-en="Leading iOS development across Begamob's global portfolio — architecture, code quality, mentoring and shipping. The team's apps span AI tools, utilities, productivity and health, and are used by people in over a hundred countries."
+           data-vi="Dẫn dắt mảng phát triển iOS cho danh mục toàn cầu của Begamob — kiến trúc, chất lượng code, mentoring và đưa sản phẩm ra thị trường. Các ứng dụng của team trải dài từ công cụ AI, tiện ích, năng suất đến sức khỏe, phục vụ người dùng tại hơn một trăm quốc gia."></p>
+
+        <div class="mt-5 grid grid-cols-3 gap-3">
+          <div class="bg-mist rounded-2xl p-4 text-center">
+            <p class="text-2xl font-extrabold text-ink">20+</p>
+            <p class="text-xs text-sub mt-0.5" data-en="Apps live" data-vi="Ứng dụng">Apps live</p>
+          </div>
+          <div class="bg-mist rounded-2xl p-4 text-center">
+            <p class="text-2xl font-extrabold text-ink">169K+</p>
+            <p class="text-xs text-sub mt-0.5" data-en="Ratings" data-vi="Đánh giá">Ratings</p>
+          </div>
+          <div class="bg-mist rounded-2xl p-4 text-center">
+            <p class="text-2xl font-extrabold text-ink">4.7★</p>
+            <p class="text-xs text-sub mt-0.5" data-en="Avg rating" data-vi="Điểm TB">Avg rating</p>
+          </div>
+        </div>
+
+        <a href="https://apps.apple.com/us/developer/begamob-global-limited/id1581766117" target="_blank" rel="noopener"
+           class="mt-6 inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all">
+           <span data-en="View team apps on the App Store" data-vi="Xem ứng dụng của team trên App Store">View team apps on the App Store</span>
+           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
-      <div>
-        <p>I'm an iOS developer. This is the site where I share my iOS knowledge. </p>
+
+      <!-- Indie card -->
+      <div class="reveal card squircle-lg p-7 lg:col-span-2 flex flex-col">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="text-xl font-bold text-ink" data-en="Indie iOS Developer" data-vi="Lập trình viên iOS độc lập">Indie iOS Developer</h3>
+            <p class="text-indigo font-semibold">Zoro4rk · Thuyet Luong</p>
+          </div>
+          <span class="shrink-0 text-xs font-semibold text-sub bg-mist border border-line px-3 py-1 rounded-full">2022 — <span data-en="now" data-vi="nay">now</span></span>
+        </div>
+        <p class="mt-4 text-sub leading-relaxed"
+           data-en="Designing, building and publishing my own iOS apps end-to-end — from idea and UI to App Store release, ASO and growth. Seven apps and counting across four categories."
+           data-vi="Tự thiết kế, lập trình và phát hành các ứng dụng iOS của riêng mình từ A đến Z — từ ý tưởng, giao diện đến phát hành trên App Store, ASO và tăng trưởng. Bảy ứng dụng và vẫn đang tiếp tục, trải dài bốn danh mục."></p>
+        <div class="mt-auto pt-5">
+          <a href="https://apps.apple.com/us/developer/thuyet-luong/id1655884965" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-indigo font-semibold text-sm hover:gap-3 transition-all">
+             <span data-en="See my developer page" data-vi="Xem trang nhà phát triển">See my developer page</span>
+             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
       </div>
     </div>
-</div>
-<!-- 
-<div class="content"> 
-  <div class="content-tab">
-    <button class="content-tab-button-active">My Applications</button>
-    <button class="content-tab-button">My Applications</button>
-  </div>
-</div> -->
+    <!-- Begamob standout apps -->
+    <div class="reveal mt-12 flex items-end justify-between gap-4 flex-wrap">
+      <div>
+        <h3 class="text-xl font-bold text-ink" data-en="Standout apps I help lead" data-vi="Các app nổi bật mình dẫn dắt">Standout apps I help lead</h3>
+        <p class="text-sm text-sub mt-1" data-en="A selection from 20+ apps across Begamob's global App Store portfolio." data-vi="Một vài app tiêu biểu trong hơn 20 app thuộc danh mục App Store toàn cầu của Begamob."></p>
+      </div>
+      <a href="https://apps.apple.com/us/developer/begamob-global-limited/id1581766117" target="_blank" rel="noopener" class="text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:gap-2.5 transition-all whitespace-nowrap">
+        <span data-en="View all on App Store" data-vi="Xem tất cả trên App Store">View all on App Store</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
 
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <a href="https://apps.apple.com/app/id1581765635" target="_blank" rel="noopener" class="reveal card squircle-lg p-4 flex items-center gap-4 group">
+        <div class="app-icon squircle w-14 h-14 shrink-0" style="background:linear-gradient(135deg,#007AFF,#5856D6)">
+          <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2f/d8/39/2fd83993-c407-e3e9-81d6-3ab217e65aac/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/256x256bb.jpg" alt="Universal Remote icon" />
+        </div>
+        <div class="min-w-0 flex-1">
+          <h4 class="font-bold text-ink leading-tight truncate">Universal Remote TV</h4>
+          <div class="mt-0.5 flex items-center gap-1.5 text-xs text-sub">
+            <span data-en="Utilities" data-vi="Tiện ích">Utilities</span><span class="opacity-40">·</span>
+            <span class="inline-flex items-center gap-0.5 font-semibold text-ink"><svg width="12" height="12" viewBox="0 0 24 24" fill="#FF9F0A"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.7</span>
+          </div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-sub group-hover:text-primary transition-colors"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <a href="https://apps.apple.com/app/id6754923194" target="_blank" rel="noopener" class="reveal card squircle-lg p-4 flex items-center gap-4 group">
+        <div class="app-icon squircle w-14 h-14 shrink-0" style="background:linear-gradient(135deg,#AF52DE,#5856D6)">
+          <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/15/10/3a/15103a61-d592-76bc-e1bf-1acbdd6352af/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/256x256bb.jpg" alt="SnapHome icon" />
+        </div>
+        <div class="min-w-0 flex-1">
+          <h4 class="font-bold text-ink leading-tight truncate">SnapHome: AI Interior</h4>
+          <div class="mt-0.5 flex items-center gap-1.5 text-xs text-sub">
+            <span data-en="AI · Design" data-vi="AI · Thiết kế">AI · Design</span><span class="opacity-40">·</span>
+            <span class="inline-flex items-center gap-0.5 font-semibold text-ink"><svg width="12" height="12" viewBox="0 0 24 24" fill="#FF9F0A"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.6</span>
+          </div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-sub group-hover:text-primary transition-colors"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <a href="https://apps.apple.com/app/id6468660073" target="_blank" rel="noopener" class="reveal card squircle-lg p-4 flex items-center gap-4 group">
+        <div class="app-icon squircle w-14 h-14 shrink-0" style="background:linear-gradient(135deg,#FF2D55,#FF6482)">
+          <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ff/e6/e5/ffe6e5cf-7e14-4122-5644-03f97605248c/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/256x256bb.jpg" alt="iCardiac icon" />
+        </div>
+        <div class="min-w-0 flex-1">
+          <h4 class="font-bold text-ink leading-tight truncate">iCardiac: Heart Health</h4>
+          <div class="mt-0.5 flex items-center gap-1.5 text-xs text-sub">
+            <span data-en="Health & Fitness" data-vi="Sức khỏe">Health &amp; Fitness</span><span class="opacity-40">·</span>
+            <span class="inline-flex items-center gap-0.5 font-semibold text-ink"><svg width="12" height="12" viewBox="0 0 24 24" fill="#FF9F0A"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.8</span>
+          </div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-sub group-hover:text-primary transition-colors"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <a href="https://apps.apple.com/app/id6737820730" target="_blank" rel="noopener" class="reveal card squircle-lg p-4 flex items-center gap-4 group">
+        <div class="app-icon squircle w-14 h-14 shrink-0" style="background:linear-gradient(135deg,#34C759,#30b0c7)">
+          <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2b/02/d8/2b02d8ec-ded8-bb5e-56cd-604e626e8518/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/256x256bb.jpg" alt="BetterMeal icon" />
+        </div>
+        <div class="min-w-0 flex-1">
+          <h4 class="font-bold text-ink leading-tight truncate">BetterMeal: Food Scanner</h4>
+          <div class="mt-0.5 flex items-center gap-1.5 text-xs text-sub">
+            <span data-en="AI · Health" data-vi="AI · Sức khỏe">AI · Health</span><span class="opacity-40">·</span>
+            <span class="inline-flex items-center gap-0.5 font-semibold text-ink"><svg width="12" height="12" viewBox="0 0 24 24" fill="#FF9F0A"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.7</span>
+          </div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-sub group-hover:text-primary transition-colors"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <a href="https://apps.apple.com/app/id1641040766" target="_blank" rel="noopener" class="reveal card squircle-lg p-4 flex items-center gap-4 group">
+        <div class="app-icon squircle w-14 h-14 shrink-0" style="background:linear-gradient(135deg,#30b0c7,#007AFF)">
+          <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/21/07/29/210729ae-3d3f-a0ce-1d0f-e983d9159d18/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/256x256bb.jpg" alt="AI Cleaner icon" />
+        </div>
+        <div class="min-w-0 flex-1">
+          <h4 class="font-bold text-ink leading-tight truncate">AI Cleaner: Storage+</h4>
+          <div class="mt-0.5 flex items-center gap-1.5 text-xs text-sub">
+            <span data-en="Utilities" data-vi="Tiện ích">Utilities</span><span class="opacity-40">·</span>
+            <span class="inline-flex items-center gap-0.5 font-semibold text-ink"><svg width="12" height="12" viewBox="0 0 24 24" fill="#FF9F0A"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.7</span>
+          </div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-sub group-hover:text-primary transition-colors"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <a href="https://apps.apple.com/app/id6761591882" target="_blank" rel="noopener" class="reveal card squircle-lg p-4 flex items-center gap-4 group">
+        <div class="app-icon squircle w-14 h-14 shrink-0" style="background:linear-gradient(135deg,#FF375F,#AF52DE)">
+          <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/78/ec/d5/78ecd517-b1ae-e6ca-8a83-eadf2f6eb348/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg" alt="ClawDance icon" />
+        </div>
+        <div class="min-w-0 flex-1">
+          <h4 class="font-bold text-ink leading-tight truncate">ClawDance: AI Video</h4>
+          <div class="mt-0.5 flex items-center gap-1.5 text-xs text-sub">
+            <span data-en="AI · Video" data-vi="AI · Video">AI · Video</span><span class="opacity-40">·</span>
+            <span class="inline-flex items-center gap-0.5 font-semibold text-ink"><svg width="12" height="12" viewBox="0 0 24 24" fill="#FF9F0A"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.8</span>
+          </div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-sub group-hover:text-primary transition-colors"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <a href="https://apps.apple.com/app/id6504796378" target="_blank" rel="noopener" class="reveal card squircle-lg p-4 flex items-center gap-4 group">
+        <div class="app-icon squircle w-14 h-14 shrink-0" style="background:linear-gradient(135deg,#1d1d1f,#3a3a3c)">
+          <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/20/e9/73/20e9734f-dc4c-e83a-dd14-dc5b034ddd7b/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/256x256bb.jpg" alt="QR Code Reader icon" />
+        </div>
+        <div class="min-w-0 flex-1">
+          <h4 class="font-bold text-ink leading-tight truncate">QR Code Reader</h4>
+          <div class="mt-0.5 flex items-center gap-1.5 text-xs text-sub">
+            <span data-en="Utilities" data-vi="Tiện ích">Utilities</span><span class="opacity-40">·</span>
+            <span class="inline-flex items-center gap-0.5 font-semibold text-ink"><svg width="12" height="12" viewBox="0 0 24 24" fill="#FF9F0A"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.7</span>
+          </div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-sub group-hover:text-primary transition-colors"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <a href="https://apps.apple.com/app/id6754900760" target="_blank" rel="noopener" class="reveal card squircle-lg p-4 flex items-center gap-4 group">
+        <div class="app-icon squircle w-14 h-14 shrink-0" style="background:linear-gradient(135deg,#5856D6,#0051D5)">
+          <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/08/d4/95/08d495e6-338b-e372-0afe-a0af3ec7ec7e/AppIconLiquidV1-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/256x256bb.jpg" alt="Authenticator icon" />
+        </div>
+        <div class="min-w-0 flex-1">
+          <h4 class="font-bold text-ink leading-tight truncate">Authenticator · 2FA</h4>
+          <div class="mt-0.5 flex items-center gap-1.5 text-xs text-sub">
+            <span data-en="Utilities" data-vi="Tiện ích">Utilities</span><span class="opacity-40">·</span>
+            <span class="inline-flex items-center gap-0.5 font-semibold text-ink"><svg width="12" height="12" viewBox="0 0 24 24" fill="#FF9F0A"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.5</span>
+          </div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-sub group-hover:text-primary transition-colors"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <a href="https://apps.apple.com/app/id6759957263" target="_blank" rel="noopener" class="reveal card squircle-lg p-4 flex items-center gap-4 group">
+        <div class="app-icon squircle w-14 h-14 shrink-0" style="background:linear-gradient(135deg,#FF9F0A,#FF6482)">
+          <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/de/a7/0f/dea70f79-a133-63bb-ad38-84e1dfeed2de/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/256x256bb.jpg" alt="Office Word icon" />
+        </div>
+        <div class="min-w-0 flex-1">
+          <h4 class="font-bold text-ink leading-tight truncate">Office Word</h4>
+          <div class="mt-0.5 flex items-center gap-1.5 text-xs text-sub">
+            <span data-en="Productivity" data-vi="Năng suất">Productivity</span><span class="opacity-40">·</span>
+            <span class="inline-flex items-center gap-0.5 font-semibold text-ink"><svg width="12" height="12" viewBox="0 0 24 24" fill="#FF9F0A"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.6</span>
+          </div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-sub group-hover:text-primary transition-colors"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <a href="https://apps.apple.com/app/id6744717189" target="_blank" rel="noopener" class="reveal card squircle-lg p-4 flex items-center gap-4 group">
+        <div class="app-icon squircle w-14 h-14 shrink-0" style="background:linear-gradient(135deg,#5856D6,#30b0c7)">
+          <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/2d/08/88/2d08882b-0f96-e4b2-7a7f-89a81f3c442b/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.jpeg/256x256bb.jpg" alt="Snoozy icon" />
+        </div>
+        <div class="min-w-0 flex-1">
+          <h4 class="font-bold text-ink leading-tight truncate">Snoozy: Sleep Recorder</h4>
+          <div class="mt-0.5 flex items-center gap-1.5 text-xs text-sub">
+            <span data-en="Health & Fitness" data-vi="Sức khỏe">Health &amp; Fitness</span><span class="opacity-40">·</span>
+            <span class="font-semibold text-primary" data-en="New" data-vi="Mới">New</span>
+          </div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-sub group-hover:text-primary transition-colors"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <a href="https://apps.apple.com/app/id6695740202" target="_blank" rel="noopener" class="reveal card squircle-lg p-4 flex items-center gap-4 group">
+        <div class="app-icon squircle w-14 h-14 shrink-0" style="background:linear-gradient(135deg,#34C759,#5856D6)">
+          <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/4c/33/71/4c3371b6-f32d-1415-dda8-5bd184bd1f8b/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/256x256bb.jpg" alt="Health Guru icon" />
+        </div>
+        <div class="min-w-0 flex-1">
+          <h4 class="font-bold text-ink leading-tight truncate">Health Guru</h4>
+          <div class="mt-0.5 flex items-center gap-1.5 text-xs text-sub">
+            <span data-en="Lifestyle" data-vi="Đời sống">Lifestyle</span><span class="opacity-40">·</span>
+            <span class="inline-flex items-center gap-0.5 font-semibold text-ink"><svg width="12" height="12" viewBox="0 0 24 24" fill="#FF9F0A"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.6</span>
+          </div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-sub group-hover:text-primary transition-colors"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <a href="https://apps.apple.com/app/id6756477635" target="_blank" rel="noopener" class="reveal card squircle-lg p-4 flex items-center gap-4 group">
+        <div class="app-icon squircle w-14 h-14 shrink-0" style="background:linear-gradient(135deg,#1d1d1f,#5856D6)">
+          <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/bd/24/3d/bd243d1b-cfe6-4760-c97a-5dab980150a8/AppIconLiquidV1-0-0-1x_U007ephone-0-1-0-sRGB-85-220.png/256x256bb.jpg" alt="Printer icon" />
+        </div>
+        <div class="min-w-0 flex-1">
+          <h4 class="font-bold text-ink leading-tight truncate">Printer: Smart Print</h4>
+          <div class="mt-0.5 flex items-center gap-1.5 text-xs text-sub">
+            <span data-en="Business" data-vi="Doanh nghiệp">Business</span><span class="opacity-40">·</span>
+            <span class="inline-flex items-center gap-0.5 font-semibold text-ink"><svg width="12" height="12" viewBox="0 0 24 24" fill="#FF9F0A"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.5</span>
+          </div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-sub group-hover:text-primary transition-colors"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <a href="https://apps.apple.com/app/id6754236526" target="_blank" rel="noopener" class="reveal card squircle-lg p-4 flex items-center gap-4 group">
+        <div class="app-icon squircle w-14 h-14 shrink-0" style="background:linear-gradient(135deg,#FF2D55,#AF52DE)">
+          <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/4f/42/26/4f42262f-649b-2017-c400-0999fe74aaea/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.jpeg/256x256bb.jpg" alt="DramaOn icon" />
+        </div>
+        <div class="min-w-0 flex-1">
+          <h4 class="font-bold text-ink leading-tight truncate">DramaOn: Short Dramas</h4>
+          <div class="mt-0.5 flex items-center gap-1.5 text-xs text-sub">
+            <span data-en="Entertainment" data-vi="Giải trí">Entertainment</span><span class="opacity-40">·</span>
+            <span class="inline-flex items-center gap-0.5 font-semibold text-ink"><svg width="12" height="12" viewBox="0 0 24 24" fill="#FF9F0A"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.8</span>
+          </div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-sub group-hover:text-primary transition-colors"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <a href="https://apps.apple.com/app/id6748395745" target="_blank" rel="noopener" class="reveal card squircle-lg p-4 flex items-center gap-4 group">
+        <div class="app-icon squircle w-14 h-14 shrink-0" style="background:linear-gradient(135deg,#007AFF,#5856D6)">
+          <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/28/90/46/28904694-34e6-072c-1765-a171e216fcb7/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/256x256bb.jpg" alt="iNotebook icon" />
+        </div>
+        <div class="min-w-0 flex-1">
+          <h4 class="font-bold text-ink leading-tight truncate">iNotebook: AI Notes</h4>
+          <div class="mt-0.5 flex items-center gap-1.5 text-xs text-sub">
+            <span data-en="AI · Notes" data-vi="AI · Ghi chú">AI · Notes</span><span class="opacity-40">·</span>
+            <span class="font-semibold text-primary" data-en="New" data-vi="Mới">New</span>
+          </div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-sub group-hover:text-primary transition-colors"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <a href="https://apps.apple.com/app/id6636528924" target="_blank" rel="noopener" class="reveal card squircle-lg p-4 flex items-center gap-4 group">
+        <div class="app-icon squircle w-14 h-14 shrink-0" style="background:linear-gradient(135deg,#34C759,#30b0c7)">
+          <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/47/89/bb/4789bb03-b479-129a-b4e5-55df99986124/AppIcon-0-0-1x_U007ephone-0-0-85-220.png/256x256bb.jpg" alt="Identify Plants icon" />
+        </div>
+        <div class="min-w-0 flex-1">
+          <h4 class="font-bold text-ink leading-tight truncate">Identify Plants</h4>
+          <div class="mt-0.5 flex items-center gap-1.5 text-xs text-sub">
+            <span data-en="AI · Plants" data-vi="AI · Cây cối">AI · Plants</span><span class="opacity-40">·</span>
+            <span class="font-semibold text-primary" data-en="New" data-vi="Mới">New</span>
+          </div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-sub group-hover:text-primary transition-colors"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPS ============ -->
+<section id="apps" class="py-20 md:py-28 bg-mist">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6">
+    <div class="reveal flex flex-wrap items-end justify-between gap-6">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold tracking-widest uppercase text-primary" data-en="My Apps" data-vi="Ứng dụng của tôi">My Apps</p>
+        <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight text-ink" data-en="Apps I designed & built" data-vi="Ứng dụng tôi thiết kế & xây dựng">Apps I designed &amp; built</h2>
+        <p class="mt-3 text-sub" data-en="My own products, live on the App Store." data-vi="Sản phẩm của riêng tôi, đang có mặt trên App Store."></p>
+      </div>
+      <div class="flex flex-wrap gap-2" id="filters">
+        <button class="filter-btn active rounded-full border border-line bg-white px-4 py-1.5 text-sm font-medium" data-filter="all"          data-en="All"          data-vi="Tất cả">All</button>
+        <button class="filter-btn rounded-full border border-line bg-white px-4 py-1.5 text-sm font-medium"        data-filter="utilities"    data-en="Utilities"    data-vi="Tiện ích">Utilities</button>
+        <button class="filter-btn rounded-full border border-line bg-white px-4 py-1.5 text-sm font-medium"        data-filter="productivity" data-en="Productivity" data-vi="Năng suất">Productivity</button>
+        <button class="filter-btn rounded-full border border-line bg-white px-4 py-1.5 text-sm font-medium"        data-filter="lifestyle"    data-en="Lifestyle"    data-vi="Đời sống">Lifestyle</button>
+        <button class="filter-btn rounded-full border border-line bg-white px-4 py-1.5 text-sm font-medium"        data-filter="education"    data-en="Education"    data-vi="Giáo dục">Education</button>
+      </div>
+    </div>
+
+    <div id="appGrid" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- LoveCounter (newest) -->
+      <article class="app card squircle-lg p-6 flex flex-col" data-cat="lifestyle">
+        <div class="flex items-center gap-4">
+          <div class="app-icon squircle w-16 h-16 shrink-0" style="background:linear-gradient(135deg,#FF5E7E,#FF2D55)">
+            <span class="absolute inset-0 grid place-items-center z-[2]">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M12 21s-6.7-4.3-9.3-8.4C.9 9.5 2.2 6 5.4 6c1.9 0 3.1 1 3.6 2 .5-1 1.7-2 3.6-2 3.2 0 4.5 3.5 2.7 6.6C18.7 16.7 12 21 12 21z"/></svg>
+            </span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="font-bold text-ink leading-tight">LoveCounter</h3>
+              <span class="text-[10px] font-bold uppercase tracking-wide text-white bg-primary px-2 py-0.5 rounded-full" data-en="New" data-vi="Mới">New</span>
+            </div>
+            <p class="text-xs text-sub" data-en="Lifestyle · 2026" data-vi="Đời sống · 2026">Lifestyle · 2026</p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-sub leading-relaxed flex-1"
+           data-en="For couples — count your days together, keep a private diary with photos & voice notes, and never miss a milestone. Sign in with Apple or Google."
+           data-vi="Dành cho các cặp đôi — đếm ngày bên nhau, viết nhật ký riêng tư kèm ảnh & ghi âm, không bỏ lỡ cột mốc nào. Đăng nhập bằng Apple hoặc Google."></p>
+        <div class="mt-4 flex flex-wrap gap-1.5">
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">SwiftUI</span>
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">Firebase Auth</span>
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">CloudKit</span>
+        </div>
+        <a href="support/LoveCounter.html" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all">
+          <span data-en="Coming soon — learn more" data-vi="Sắp ra mắt — tìm hiểu thêm">Coming soon — learn more</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- Cleaner -->
+      <article class="app card squircle-lg p-6 flex flex-col" data-cat="utilities">
+        <div class="flex items-center gap-4">
+          <div class="app-icon squircle w-16 h-16 shrink-0" style="background:linear-gradient(135deg,#34C759,#30b0c7)">
+            <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/23/b5/08/23b50832-7c4f-4db5-1978-ae5a4dae15cf/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/256x256bb.jpg" alt="Cleaner: Photos & Contacts icon" />
+          </div>
+          <div>
+            <h3 class="font-bold text-ink leading-tight">Cleaner</h3>
+            <p class="text-xs text-sub" data-en="Utilities · 2025" data-vi="Tiện ích · 2025">Utilities · 2025</p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-sub leading-relaxed flex-1"
+           data-en="Free up gigabytes in seconds — smart duplicate & similar-photo detection, plus contact de-duping and vCard backup. Everything runs on-device."
+           data-vi="Giải phóng hàng GB bộ nhớ trong vài giây — phát hiện ảnh trùng/tương tự thông minh, dọn danh bạ trùng và sao lưu vCard. Mọi thứ xử lý ngay trên thiết bị."></p>
+        <div class="mt-4 flex flex-wrap gap-1.5">
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">SwiftUI</span>
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">PhotoKit</span>
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">Vision</span>
+        </div>
+        <a href="https://apps.apple.com/us/app/cleaner-photos-contacts/id6739786400" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all">
+          <span data-en="View on App Store" data-vi="Xem trên App Store">View on App Store</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- Thi THPT -->
+      <article class="app card squircle-lg p-6 flex flex-col" data-cat="education">
+        <div class="flex items-center gap-4">
+          <div class="app-icon squircle w-16 h-16 shrink-0" style="background:linear-gradient(135deg,#10b981,#065f46)">
+            <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/68/b2/18/68b21816-932c-cfb1-eb33-db6211352b4c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg" alt="Thi THPT icon" />
+          </div>
+          <div>
+            <h3 class="font-bold text-ink leading-tight">Thi THPT</h3>
+            <p class="text-xs text-sub" data-en="Education · 2023" data-vi="Giáo dục · 2023">Education · 2023</p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-sub leading-relaxed flex-1"
+           data-en="Vietnam national high-school exam prep: full mock tests, auto-grading with detailed solutions, a progress dashboard, periodic table and an AI explainer."
+           data-vi="Ôn luyện thi THPT Quốc gia: đề thi chuẩn cấu trúc, chấm điểm tự động kèm lời giải chi tiết, dashboard tiến trình, bảng tuần hoàn và trợ lý AI giải thích."></p>
+        <div class="mt-4 flex flex-wrap gap-1.5">
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">SwiftUI</span>
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">Firebase</span>
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">StoreKit</span>
+        </div>
+        <a href="https://apps.apple.com/us/app/thi-thpt/id1662660036" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all">
+          <span data-en="View on App Store" data-vi="Xem trên App Store">View on App Store</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- Countdowns -->
+      <article class="app card squircle-lg p-6 flex flex-col" data-cat="productivity">
+        <div class="flex items-center gap-4">
+          <div class="app-icon squircle w-16 h-16 shrink-0" style="background:linear-gradient(135deg,#FF9F0A,#FF6482)">
+            <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/bc/34/54/bc3454af-2b87-4367-d005-8491cae7efdc/AppIcon-0-0-1x_U007ephone-0-1-85-220.jpeg/256x256bb.jpg" alt="Countdowns & Widgets icon" />
+          </div>
+          <div>
+            <h3 class="font-bold text-ink leading-tight">Countdowns</h3>
+            <p class="text-xs text-sub" data-en="Productivity · 2024" data-vi="Năng suất · 2024">Productivity · 2024</p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-sub leading-relaxed flex-1"
+           data-en="Count down to the moments that matter — unlimited events, beautiful Home-Screen widgets and iCloud sync across iPhone, iPad and Apple Watch."
+           data-vi="Đếm ngược đến những khoảnh khắc quan trọng — sự kiện không giới hạn, widget đẹp trên màn hình chính và đồng bộ iCloud giữa iPhone, iPad và Apple Watch."></p>
+        <div class="mt-4 flex flex-wrap gap-1.5">
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">SwiftUI</span>
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">WidgetKit</span>
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">CloudKit</span>
+        </div>
+        <a href="https://apps.apple.com/us/app/countdowns-widgets/id6502430103" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all">
+          <span data-en="View on App Store" data-vi="Xem trên App Store">View on App Store</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- Diary: Simple Note -->
+      <article class="app card squircle-lg p-6 flex flex-col" data-cat="lifestyle">
+        <div class="flex items-center gap-4">
+          <div class="app-icon squircle w-16 h-16 shrink-0" style="background:linear-gradient(135deg,#5856D6,#007AFF)">
+            <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/69/81/ff/6981ff60-50d8-a5a8-6381-259870cb5c64/AppIcon-0-1x_U007ephone-0-sRGB-85-220.png/256x256bb.jpg" alt="Diary: Simple Note Your Life icon" />
+          </div>
+          <div>
+            <h3 class="font-bold text-ink leading-tight">Diary: Simple Note</h3>
+            <p class="text-xs text-sub" data-en="Lifestyle · 2023" data-vi="Đời sống · 2023">Lifestyle · 2023</p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-sub leading-relaxed flex-1"
+           data-en="A simple, beautiful diary to capture the best moments of your day, with highly customizable themes and moods."
+           data-vi="Ứng dụng nhật ký đơn giản, đẹp mắt để ghi lại những khoảnh khắc đẹp nhất trong ngày, với giao diện và cảm xúc tuỳ biến cao."></p>
+        <div class="mt-4 flex flex-wrap gap-1.5">
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">UIKit</span>
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">Core Data</span>
+        </div>
+        <a href="https://apps.apple.com/us/app/diary-simple-note-your-life/id6449438289" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all">
+          <span data-en="View on App Store" data-vi="Xem trên App Store">View on App Store</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- QR Code -->
+      <article class="app card squircle-lg p-6 flex flex-col" data-cat="utilities">
+        <div class="flex items-center gap-4">
+          <div class="app-icon squircle w-16 h-16 shrink-0" style="background:linear-gradient(135deg,#1d1d1f,#3a3a3c)">
+            <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/cc/cd/6e/cccd6e94-7b4a-770a-cf6d-00ec44354213/AppIcon-1x_U007ephone-85-220.png/256x256bb.jpg" alt="QR Code: Scan & Create icon" />
+          </div>
+          <div>
+            <h3 class="font-bold text-ink leading-tight">QR Code</h3>
+            <p class="text-xs text-sub" data-en="Utilities · 2023" data-vi="Tiện ích · 2023">Utilities · 2023</p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-sub leading-relaxed flex-1"
+           data-en="A fast, powerful QR scanner — and a creator for your own personalized codes, your style."
+           data-vi="Trình quét QR nhanh, mạnh mẽ — và công cụ tạo mã QR cá nhân hoá theo phong cách của bạn."></p>
+        <div class="mt-4 flex flex-wrap gap-1.5">
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">UIKit</span>
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">AVFoundation</span>
+        </div>
+        <a href="https://apps.apple.com/us/app/qr-code-scan-create/id6450904811" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all">
+          <span data-en="View on App Store" data-vi="Xem trên App Store">View on App Store</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- Diary Nhật Ký -->
+      <article class="app card squircle-lg p-6 flex flex-col" data-cat="lifestyle">
+        <div class="flex items-center gap-4">
+          <div class="app-icon squircle w-16 h-16 shrink-0" style="background:linear-gradient(135deg,#FF2D55,#FF9F0A)">
+            <img loading="lazy" onerror="this.style.display='none'" src="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/8b/9c/35/8b9c3596-bedf-9230-1d26-cae585d01c34/AppIcon-0-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg" alt="Diary - Nhật Ký icon" />
+          </div>
+          <div>
+            <h3 class="font-bold text-ink leading-tight">Diary · Nhật Ký</h3>
+            <p class="text-xs text-sub" data-en="Lifestyle · 2022 · First app" data-vi="Đời sống · 2022 · App đầu tay">Lifestyle · 2022 · First app</p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-sub leading-relaxed flex-1"
+           data-en="My very first App Store app — a highly customizable diary where you design the look you love."
+           data-vi="Ứng dụng đầu tay của mình trên App Store — nhật ký tuỳ biến cao, tự tạo giao diện bạn yêu thích."></p>
+        <div class="mt-4 flex flex-wrap gap-1.5">
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">UIKit</span>
+          <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">Core Data</span>
+        </div>
+        <a href="https://apps.apple.com/us/app/diary-nh%E1%BA%ADt-k%C3%BD/id6444658233" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all">
+          <span data-en="View on App Store" data-vi="Xem trên App Store">View on App Store</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ WEB / FREELANCE ============ -->
+<section id="web" class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6">
+    <div class="reveal max-w-2xl">
+      <p class="text-sm font-semibold tracking-widest uppercase text-primary" data-en="Code & Open Source" data-vi="Mã nguồn mở">Code &amp; Open Source</p>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight text-ink" data-en="Beyond the App Store" data-vi="Ngoài App Store">Beyond the App Store</h2>
+    </div>
+
+    <div class="mt-10">
+      <a href="https://github.com/thuyetngocluong" target="_blank" rel="noopener" class="reveal card squircle-lg p-7 sm:p-9 group flex flex-col sm:flex-row sm:items-center gap-6">
+        <span class="grid place-items-center w-16 h-16 rounded-2xl bg-ink text-white shrink-0">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12 11.5 11.5 0 0 0 8.4 23c.6.1.8-.26.8-.57v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.6 18 5 18 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+        </span>
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-ink">GitHub · @thuyetngocluong</h3>
+          <p class="mt-1.5 text-sm text-sub leading-relaxed sm:max-w-xl" data-en="More code, experiments and this very website — all open on my GitHub profile." data-vi="Thêm code, các thử nghiệm và chính website này — tất cả đều công khai trên GitHub của mình."></p>
+        </div>
+        <span class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all shrink-0">
+          <span data-en="Visit profile" data-vi="Xem trang">Visit profile</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="py-20 md:py-28 bg-mist">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6">
+    <div class="reveal max-w-2xl">
+      <p class="text-sm font-semibold tracking-widest uppercase text-primary" data-en="Skills & Tools" data-vi="Kỹ năng & Công cụ">Skills &amp; Tools</p>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight text-ink" data-en="My toolkit" data-vi="Bộ công cụ của tôi">My toolkit</h2>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-5">
+      <div class="reveal card squircle-lg p-6">
+        <h3 class="font-bold text-ink" data-en="Languages & UI" data-vi="Ngôn ngữ & Giao diện">Languages &amp; UI</h3>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">Swift</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">SwiftUI</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">UIKit</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">Objective-C</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">HTML / CSS</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">JavaScript</span>
+        </div>
+      </div>
+      <div class="reveal card squircle-lg p-6">
+        <h3 class="font-bold text-ink" data-en="Apple Frameworks" data-vi="Framework của Apple">Apple Frameworks</h3>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">WidgetKit</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">CloudKit</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">Core Data</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">StoreKit 2</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">Combine</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">AVFoundation</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">PhotoKit</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">Vision</span>
+        </div>
+      </div>
+      <div class="reveal card squircle-lg p-6">
+        <h3 class="font-bold text-ink" data-en="Services & Tools" data-vi="Dịch vụ & Công cụ">Services &amp; Tools</h3>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">Firebase</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">AdMob</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">Sign in with Apple</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">Xcode</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">Git</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">TestFlight</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">App Store Connect</span>
+          <span class="chip rounded-full px-3 py-1.5 text-sm text-ink/80">Figma</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="py-20 md:py-28">
+  <div class="max-w-4xl mx-auto px-5 sm:px-6">
+    <div class="reveal relative overflow-hidden rounded-[2rem] p-10 md:p-14 text-center" style="background:linear-gradient(135deg,#007AFF,#5856D6)">
+      <div class="blob w-72 h-72 -top-20 -right-10" style="background:radial-gradient(circle,rgba(255,255,255,.35),transparent 70%)"></div>
+      <div class="relative">
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white" data-en="Let's build something great." data-vi="Cùng nhau tạo ra điều tuyệt vời.">Let's build something great.</h2>
+        <p class="mt-4 text-white/90 max-w-xl mx-auto leading-relaxed"
+           data-en="Open to iOS roles, freelance apps and collaborations. Drop me a line — I usually reply within a day."
+           data-vi="Sẵn sàng cho các cơ hội iOS, dự án freelance và hợp tác. Hãy nhắn cho mình — mình thường phản hồi trong vòng một ngày."></p>
+
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a href="mailto:thuyetngocluong@gmail.com" class="inline-flex items-center gap-2 bg-white text-ink font-semibold px-6 py-3 rounded-full hover:bg-mist transition-colors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <span data-en="Email me" data-vi="Gửi email">Email me</span>
+          </a>
+          <a href="https://apps.apple.com/us/developer/thuyet-luong/id1655884965" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/15 text-white font-semibold px-6 py-3 rounded-full border border-white/30 hover:bg-white/25 transition-colors">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.14-.42 2.2-1.13 3-.84.94-2.2 1.66-3.32 1.57-.14-1.1.42-2.27 1.1-3.01.83-.94 2.27-1.62 3.35-1.56zM20.9 17.2c-.55 1.27-.82 1.84-1.53 2.97-.99 1.57-2.39 3.53-4.12 3.54-1.54.02-1.93-1-4.02-.99-2.09.01-2.52 1.01-4.06.99-1.73-.02-3.06-1.78-4.05-3.35C-.6 17.05-.92 12.07 1.2 9.42 2.4 7.9 4.27 6.95 6.02 6.95c1.78 0 2.9 1 4.37 1 1.43 0 2.3-1 4.36-1 1.56 0 3.2.85 4.37 2.32-3.84 2.1-3.22 7.58 1.78 7.93z"/></svg>
+            App Store
+          </a>
+        </div>
+
+        <div class="mt-8 flex items-center justify-center gap-4">
+          <a href="https://github.com/thuyetngocluong" target="_blank" rel="noopener" aria-label="GitHub" class="grid place-items-center w-11 h-11 rounded-full bg-white/15 border border-white/30 text-white hover:bg-white hover:text-ink transition-colors">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12 11.5 11.5 0 0 0 8.4 23c.6.1.8-.26.8-.57v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.6 18 5 18 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/luongngocthuyet.hm.hh/" target="_blank" rel="noopener" aria-label="Facebook" class="grid place-items-center w-11 h-11 rounded-full bg-white/15 border border-white/30 text-white hover:bg-white hover:text-[#1877F2] transition-colors">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-line py-10">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-sub">
+    <p>&copy; <span id="year">2026</span> Lương Ngọc Thuyết · Zoro4rk</p>
+    <p data-en="Designed & built with care in Hà Nội." data-vi="Thiết kế & xây dựng tận tâm tại Hà Nội.">Designed &amp; built with care in Hà Nội.</p>
+  </div>
+</footer>
+
+<script>
+  /* ---------- i18n ---------- */
+  const LANG_KEY = 'lnt-lang';
+  function setLang(lang){
+    lang = (lang === 'vi') ? 'vi' : 'en';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-en]').forEach(el=>{
+      const v = el.getAttribute('data-' + lang);
+      if(v !== null) el.textContent = v;
+    });
+    const titleEl = document.querySelector('title');
+    if(titleEl){ const t = titleEl.getAttribute('data-' + lang); if(t) document.title = t; }
+    document.querySelectorAll('[data-lang-btn]').forEach(b=>{
+      b.classList.toggle('lang-active', b.getAttribute('data-lang-btn') === lang);
+    });
+    try{ localStorage.setItem(LANG_KEY, lang); }catch(e){}
+  }
+  document.querySelectorAll('[data-lang-btn]').forEach(b=>{
+    b.addEventListener('click', ()=> setLang(b.getAttribute('data-lang-btn')));
+  });
+  (function(){
+    let saved = null;
+    try{ saved = localStorage.getItem(LANG_KEY); }catch(e){}
+    setLang(saved || 'en');
+  })();
+
+  /* ---------- mobile menu ---------- */
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+  mobileMenu.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> mobileMenu.classList.add('hidden')));
+
+  /* ---------- nav scroll style ---------- */
+  const nav = document.getElementById('nav');
+  const onScroll = ()=>{
+    if(window.scrollY > 20){
+      nav.classList.add('bg-white/80','backdrop-blur-xl','border-line','shadow-sm');
+    }else{
+      nav.classList.remove('bg-white/80','backdrop-blur-xl','border-line','shadow-sm');
+    }
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---------- app filter ---------- */
+  const filterWrap = document.getElementById('filters');
+  const cards = Array.from(document.querySelectorAll('#appGrid .app'));
+  filterWrap.addEventListener('click', (e)=>{
+    const btn = e.target.closest('.filter-btn');
+    if(!btn) return;
+    filterWrap.querySelectorAll('.filter-btn').forEach(b=> b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.getAttribute('data-filter');
+    cards.forEach(c=>{
+      const show = (f === 'all' || c.getAttribute('data-cat') === f);
+      c.style.display = show ? '' : 'none';
+    });
+  });
+
+  /* ---------- reveal on scroll ---------- */
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+
+  /* ---------- year ---------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
