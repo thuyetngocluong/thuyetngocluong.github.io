@@ -106,7 +106,7 @@
 
 <div class="header">
     <h1>Chính sách bảo mật</h1>
-    <p>Cập nhật lần cuối: 15/03/2026</p>
+    <p>Cập nhật lần cuối: 26/10/2026</p>
 </div>
 
 <div class="container">
@@ -120,18 +120,24 @@
         <h2><span class="num">2</span> Thông tin chúng tôi thu thập</h2>
         <p><strong>a) Thông tin tự động thu thập:</strong></p>
         <ul>
-            <li>Mã định danh thiết bị ẩn danh (anonymous ID) để đồng bộ dữ liệu học tập.</li>
+            <li>Mã định danh ẩn danh (Firebase anonymous ID) được tạo khi bạn mở ứng dụng, dùng để lưu dữ liệu học tập.</li>
             <li>Thông tin thiết bị cơ bản (loại thiết bị, phiên bản hệ điều hành) nhằm tối ưu hóa trải nghiệm.</li>
             <li>Dữ liệu sử dụng ứng dụng: bài thi đã làm, điểm số, thời gian làm bài.</li>
         </ul>
-        <p><strong>b) Thông tin chúng tôi KHÔNG thu thập:</strong></p>
+        <p><strong>b) Thông tin khi bạn chọn đăng nhập (không bắt buộc):</strong></p>
         <ul>
-            <li>Tên thật, địa chỉ email, số điện thoại hoặc thông tin cá nhân nhận dạng.</li>
-            <li>Danh bạ, tin nhắn, hình ảnh hoặc dữ liệu cá nhân trên thiết bị.</li>
-            <li>Thông tin thanh toán (được Apple xử lý hoàn toàn).</li>
+            <li>Địa chỉ email và tên hiển thị từ tài khoản Google, Apple hoặc email bạn đăng ký. Với Apple, bạn có thể chọn ẩn email thật.</li>
+            <li>Mã người dùng Firebase (UID) và phương thức đăng nhập (Google, Apple, Email/Mật khẩu).</li>
+            <li>Mật khẩu (nếu đăng nhập bằng Email) được Firebase Authentication xử lý trực tiếp; máy chủ ThiTHPT không nhận và không lưu mật khẩu.</li>
+        </ul>
+        <p><strong>c) Thông tin chúng tôi KHÔNG thu thập:</strong></p>
+        <ul>
+            <li>Số điện thoại, địa chỉ, vị trí.</li>
+            <li>Danh bạ, tin nhắn, hình ảnh hoặc dữ liệu cá nhân khác trên thiết bị.</li>
+            <li>Thông tin thanh toán (được Apple App Store / Google Play xử lý hoàn toàn).</li>
         </ul>
         <div class="highlight">
-            <p>ThiTHPT hoạt động trên hệ thống đăng nhập ẩn danh. Chúng tôi không yêu cầu và không lưu trữ bất kỳ thông tin cá nhân nhận dạng nào.</p>
+            <p>Đăng nhập là không bắt buộc. Bạn có thể dùng ứng dụng ở chế độ Khách (ẩn danh). Chỉ khi bạn chọn liên kết Google, Apple hoặc Email, chúng tôi mới lưu email và tên hiển thị để giữ lịch sử làm bài khi đổi máy.</p>
         </div>
     </div>
 
@@ -141,6 +147,7 @@
         <ul>
             <li>Cung cấp và duy trì các tính năng của ứng dụng.</li>
             <li>Lưu trữ tiến trình học tập và điểm số của bạn.</li>
+            <li>Xác thực tài khoản và đồng bộ lịch sử làm bài giữa các thiết bị khi bạn đăng nhập.</li>
             <li>Cải thiện chất lượng nội dung và trải nghiệm người dùng.</li>
             <li>Hiển thị quảng cáo phù hợp (phiên bản miễn phí).</li>
             <li>Phân tích xu hướng sử dụng để phát triển tính năng mới.</li>
@@ -151,9 +158,10 @@
         <h2><span class="num">4</span> Dịch vụ bên thứ ba</h2>
         <p>Ứng dụng sử dụng các dịch vụ bên thứ ba sau, mỗi dịch vụ có chính sách bảo mật riêng:</p>
         <ul>
-            <li><strong>Firebase (Google)</strong> — Xác thực ẩn danh và phân tích ứng dụng.</li>
+            <li><strong>Firebase (Google)</strong> — Xác thực tài khoản (ẩn danh, Google, Apple, Email/Mật khẩu), phân tích ứng dụng và báo cáo lỗi (Crashlytics).</li>
+            <li><strong>Google Sign-In</strong> và <strong>Sign in with Apple</strong> — Đăng nhập bằng tài khoản Google hoặc Apple khi bạn chọn.</li>
             <li><strong>Google AdMob</strong> — Hiển thị quảng cáo trong phiên bản miễn phí. AdMob có thể thu thập dữ liệu quảng cáo theo chính sách của Google.</li>
-            <li><strong>Apple StoreKit</strong> — Xử lý giao dịch mua hàng trong ứng dụng.</li>
+            <li><strong>Apple StoreKit</strong> và <strong>Google Play Billing</strong> — Xử lý giao dịch mua hàng trong ứng dụng.</li>
         </ul>
         <p>Chúng tôi khuyến khích bạn tìm hiểu chính sách bảo mật của các dịch vụ này.</p>
     </div>
@@ -164,7 +172,7 @@
         <ul>
             <li>Mã hóa kết nối HTTPS cho mọi giao tiếp giữa ứng dụng và máy chủ.</li>
             <li>Hệ thống xác thực token để bảo vệ dữ liệu người dùng.</li>
-            <li>Không lưu trữ mật khẩu hoặc thông tin nhạy cảm.</li>
+            <li>Không lưu trữ mật khẩu hoặc thông tin thanh toán trên máy chủ của chúng tôi.</li>
         </ul>
         <p>Tuy nhiên, không có phương thức truyền tải qua internet hoặc lưu trữ điện tử nào đảm bảo an toàn 100%. Chúng tôi nỗ lực bảo vệ dữ liệu của bạn nhưng không thể cam kết bảo mật tuyệt đối.</p>
     </div>
@@ -174,8 +182,8 @@
         <p>Bạn có các quyền sau đối với dữ liệu của mình:</p>
         <ul>
             <li><strong>Quyền truy cập:</strong> Yêu cầu thông tin về dữ liệu chúng tôi lưu trữ liên quan đến bạn.</li>
-            <li><strong>Quyền xóa:</strong> Yêu cầu xóa toàn bộ dữ liệu của bạn khỏi hệ thống. Bạn cũng có thể gỡ cài đặt ứng dụng để xóa dữ liệu cục bộ.</li>
-            <li><strong>Quyền từ chối quảng cáo:</strong> Nâng cấp Premium để loại bỏ quảng cáo, hoặc điều chỉnh cài đặt quảng cáo cá nhân hóa trong Cài đặt iOS.</li>
+            <li><strong>Quyền xóa:</strong> Xóa tài khoản và toàn bộ lịch sử làm bài ngay trong ứng dụng (Cài đặt → Tài khoản → Xoá tài khoản), hoặc gửi yêu cầu theo hướng dẫn tại <a href="https://thuyetngocluong.github.io/delete_account/ThiTHPT">trang xoá tài khoản</a>. Bạn cũng có thể gỡ cài đặt ứng dụng để xóa dữ liệu cục bộ.</li>
+            <li><strong>Quyền từ chối quảng cáo:</strong> Nâng cấp Premium để loại bỏ quảng cáo, hoặc điều chỉnh cài đặt quảng cáo cá nhân hóa trong Cài đặt của iOS hoặc Android.</li>
         </ul>
         <p>Để thực hiện các quyền trên, vui lòng liên hệ chúng tôi qua email bên dưới.</p>
     </div>
