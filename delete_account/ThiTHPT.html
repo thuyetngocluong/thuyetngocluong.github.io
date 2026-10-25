@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xoá tài khoản - ThiTHPT</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.7;
+            -webkit-text-size-adjust: 100%;
+        }
+        .header {
+            background: linear-gradient(135deg, #065f46, #10b981);
+            padding: 40px 20px 32px;
+            text-align: center;
+        }
+        .header h1 {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+        .container {
+            max-width: 680px;
+            margin: -16px auto 40px;
+            padding: 0 16px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .card h2 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #065f46;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card h2 .num {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            width: 28px; height: 28px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+        .card p, .card li {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 8px;
+        }
+        .card ul {
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+        .card li { margin-bottom: 4px; }
+        .highlight {
+            background: #f0fdf4;
+            border-left: 3px solid #10b981;
+            padding: 12px 16px;
+            border-radius: 0 12px 12px 0;
+            margin: 12px 0;
+        }
+        .highlight p {
+            color: #065f46;
+            font-weight: 500;
+            margin: 0;
+        }
+        .contact {
+            text-align: center;
+            padding: 24px 20px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .contact a {
+            color: #10b981;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .footer {
+            text-align: center;
+            padding: 24px 16px;
+            font-size: 13px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Xoá tài khoản ThiTHPT</h1>
+    <p>Cập nhật lần cuối: 26/10/2026</p>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h2><span class="num">1</span> Xoá ngay trong ứng dụng</h2>
+        <p>Nếu bạn vẫn còn ứng dụng <strong>ThiTHPT</strong> trên máy:</p>
+        <ul>
+            <li>Mở ứng dụng, chọn tab <strong>Cài đặt</strong>.</li>
+            <li>Trong mục <strong>Tài khoản</strong>, chọn <strong>Xoá tài khoản</strong>.</li>
+            <li>Xác nhận xoá. Tài khoản Email cần nhập lại mật khẩu; tài khoản Google hoặc Apple cần xác nhận lại bằng tài khoản đó.</li>
+        </ul>
+        <div class="highlight">
+            <p>Tài khoản và dữ liệu được xoá ngay lập tức, không thể khôi phục.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><span class="num">2</span> Yêu cầu xoá qua email</h2>
+        <p>Nếu bạn đã gỡ ứng dụng hoặc không thể đăng nhập, hãy gửi email tới <a href="mailto:thuyetngocluong.working@gmail.com?subject=Y%C3%AAu%20c%E1%BA%A7u%20xo%C3%A1%20t%C3%A0i%20kho%E1%BA%A3n%20ThiTHPT">thuyetngocluong.working@gmail.com</a> với tiêu đề <strong>"Yêu cầu xoá tài khoản ThiTHPT"</strong>, ghi rõ:</p>
+        <ul>
+            <li>Email bạn đã dùng để đăng nhập (Google, Apple hoặc Email/Mật khẩu).</li>
+            <li>Phương thức đăng nhập bạn đã sử dụng.</li>
+        </ul>
+        <p>Chúng tôi sẽ xác minh và xoá tài khoản trong vòng <strong>7 ngày</strong> kể từ khi nhận được yêu cầu, sau đó gửi email xác nhận cho bạn.</p>
+    </div>
+
+    <div class="card">
+        <h2><span class="num">3</span> Dữ liệu bị xoá</h2>
+        <ul>
+            <li>Tài khoản đăng nhập (Firebase Authentication) và thông tin liên kết: email, tên hiển thị, phương thức đăng nhập.</li>
+            <li>Toàn bộ lịch sử làm bài: bài thi đã làm, đáp án, điểm số, thời gian làm bài.</li>
+            <li>Các phiên đăng nhập trên mọi thiết bị.</li>
+        </ul>
+        <p>Chúng tôi không giữ lại bản sao nào của các dữ liệu trên sau khi xoá.</p>
+    </div>
+
+    <div class="card">
+        <h2><span class="num">4</span> Dữ liệu không bị ảnh hưởng</h2>
+        <ul>
+            <li>Gói Premium được mua và quản lý bởi Google Play hoặc App Store, không gắn với tài khoản ThiTHPT. Bạn vẫn có thể khôi phục giao dịch sau khi xoá tài khoản. Để huỷ gia hạn, hãy quản lý gói đăng ký trong Google Play hoặc App Store.</li>
+            <li>Dữ liệu thống kê ẩn danh, đã tổng hợp và không thể dùng để nhận dạng bạn.</li>
+        </ul>
+    </div>
+
+    <div class="contact">
+        <h2 style="justify-content:center;color:#065f46;font-size:17px;margin-bottom:8px;">Liên hệ</h2>
+        <p style="font-size:15px;color:#475569;">Mọi câu hỏi về việc xoá tài khoản và dữ liệu, vui lòng liên hệ:</p>
+        <p style="margin-top:8px;"><a href="mailto:thuyetngocluong.working@gmail.com">thuyetngocluong.working@gmail.com</a></p>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 ThiTHPT. Tất cả quyền được bảo lưu.
+    </div>
+
+</div>
+
+</body>
+</html>
