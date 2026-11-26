@@ -17,27 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          primary: '#007AFF',
-          primaryDark: '#0051D5',
-          indigo: '#5856D6',
-          ink: '#1d1d1f',
-          sub: '#6e6e73',
-          line: '#e7e7ee',
-          mist: '#f5f5f7',
-        },
-        fontFamily: {
-          sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        },
-      },
-    },
-  };
-</script>
+<link rel="stylesheet" href="css/tailwind.css" />
 
 <style>
   html { -webkit-text-size-adjust: 100%; }
@@ -161,8 +141,7 @@
 
         <p class="mt-6 text-lg text-sub max-w-xl leading-relaxed"
            data-en="Indie developer with apps on the App Store and Tech Lead for Begamob Global Limited's global portfolio. I care about clean design, real privacy, and shipping. Based in Hà Nội, Vietnam."
-           data-vi="Nhà phát triển độc lập với nhiều ứng dụng trên App Store, đồng thời là Tech Lead cho danh mục ứng dụng toàn cầu của Begamob Global Limited. Tôi đề cao thiết kế tinh gọn, quyền riêng tư thật sự và việc đưa sản phẩm đến người dùng. Sống tại Hà Nội, Việt Nam.">
-        </p>
+           data-vi="Nhà phát triển độc lập với nhiều ứng dụng trên App Store, đồng thời là Tech Lead cho danh mục ứng dụng toàn cầu của Begamob Global Limited. Tôi đề cao thiết kế tinh gọn, quyền riêng tư thật sự và việc đưa sản phẩm đến người dùng. Sống tại Hà Nội, Việt Nam.">Indie developer with apps on the App Store and Tech Lead for Begamob Global Limited's global portfolio. I care about clean design, real privacy, and shipping. Based in Hà Nội, Vietnam.</p>
 
         <div class="mt-8 flex flex-wrap items-center gap-3">
           <a href="#apps" class="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full shadow-lg shadow-primary/30 hover:bg-primaryDark transition-colors"
@@ -233,10 +212,10 @@
             data-en="An iOS engineer who loves shipping." data-vi="Một kỹ sư iOS đam mê tạo ra sản phẩm.">An iOS engineer who loves shipping.</h2>
         <p class="mt-6 text-sub leading-relaxed"
            data-en="I'm Thuyết — an iOS developer from Hà Nội and a graduate of Hanoi University of Science and Technology (HUST). Since 2022 I've designed and published my own apps on the App Store: diaries, countdowns, exam prep, QR tools and storage cleaners — always with clean design and genuine, on-device privacy."
-           data-vi="Mình là Thuyết — lập trình viên iOS tại Hà Nội, tốt nghiệp Đại học Bách Khoa Hà Nội (HUST). Từ năm 2022, mình tự thiết kế và phát hành các ứng dụng của riêng mình trên App Store: nhật ký, đếm ngược, ôn thi, công cụ QR và dọn dẹp bộ nhớ — luôn chú trọng thiết kế tinh gọn và quyền riêng tư thật sự, xử lý ngay trên thiết bị."></p>
+           data-vi="Mình là Thuyết — lập trình viên iOS tại Hà Nội, tốt nghiệp Đại học Bách Khoa Hà Nội (HUST). Từ năm 2022, mình tự thiết kế và phát hành các ứng dụng của riêng mình trên App Store: nhật ký, đếm ngược, ôn thi, công cụ QR và dọn dẹp bộ nhớ — luôn chú trọng thiết kế tinh gọn và quyền riêng tư thật sự, xử lý ngay trên thiết bị.">I'm Thuyết — an iOS developer from Hà Nội and a graduate of Hanoi University of Science and Technology (HUST). Since 2022 I've designed and published my own apps on the App Store: diaries, countdowns, exam prep, QR tools and storage cleaners — always with clean design and genuine, on-device privacy.</p>
         <p class="mt-4 text-sub leading-relaxed"
            data-en="Today I work as a Tech Lead, guiding iOS development for Begamob Global Limited's global app portfolio — from AI-powered consumer apps to productivity and utilities used by hundreds of thousands of people."
-           data-vi="Hiện tại mình là Tech Lead, dẫn dắt mảng phát triển iOS cho danh mục ứng dụng toàn cầu của Begamob Global Limited — từ các ứng dụng AI cho người dùng phổ thông đến các app năng suất, tiện ích được hàng trăm nghìn người sử dụng."></p>
+           data-vi="Hiện tại mình là Tech Lead, dẫn dắt mảng phát triển iOS cho danh mục ứng dụng toàn cầu của Begamob Global Limited — từ các ứng dụng AI cho người dùng phổ thông đến các app năng suất, tiện ích được hàng trăm nghìn người sử dụng.">Today I work as a Tech Lead, guiding iOS development for Begamob Global Limited's global app portfolio — from AI-powered consumer apps to productivity and utilities used by hundreds of thousands of people.</p>
       </div>
 
       <div class="reveal grid grid-cols-2 gap-4">
@@ -278,21 +257,21 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
         </span>
         <h3 class="font-bold text-ink text-lg" data-en="iOS App Development" data-vi="Phát triển ứng dụng iOS">iOS App Development</h3>
-        <p class="mt-2 text-sm text-sub leading-relaxed" data-en="Native apps with Swift & SwiftUI — widgets, iCloud sync, in-app purchases, notifications and more." data-vi="Ứng dụng native bằng Swift & SwiftUI — widget, đồng bộ iCloud, mua trong ứng dụng, thông báo và hơn thế nữa."></p>
+        <p class="mt-2 text-sm text-sub leading-relaxed" data-en="Native apps with Swift & SwiftUI — widgets, iCloud sync, in-app purchases, notifications and more." data-vi="Ứng dụng native bằng Swift & SwiftUI — widget, đồng bộ iCloud, mua trong ứng dụng, thông báo và hơn thế nữa.">Native apps with Swift &amp; SwiftUI — widgets, iCloud sync, in-app purchases, notifications and more.</p>
       </div>
       <div class="reveal card squircle-lg p-6">
         <span class="grid place-items-center w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo to-primary text-white mb-4">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
         </span>
         <h3 class="font-bold text-ink text-lg" data-en="Architecture & Leadership" data-vi="Kiến trúc & Dẫn dắt">Architecture &amp; Leadership</h3>
-        <p class="mt-2 text-sm text-sub leading-relaxed" data-en="MVVM / Clean architecture, code review, mentoring and shipping quality at scale as a Tech Lead." data-vi="Kiến trúc MVVM / Clean, review code, mentoring và đảm bảo chất lượng ở quy mô lớn với vai trò Tech Lead."></p>
+        <p class="mt-2 text-sm text-sub leading-relaxed" data-en="MVVM / Clean architecture, code review, mentoring and shipping quality at scale as a Tech Lead." data-vi="Kiến trúc MVVM / Clean, review code, mentoring và đảm bảo chất lượng ở quy mô lớn với vai trò Tech Lead.">MVVM / Clean architecture, code review, mentoring and shipping quality at scale as a Tech Lead.</p>
       </div>
       <div class="reveal card squircle-lg p-6">
         <span class="grid place-items-center w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-indigo text-white mb-4">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 9h20M8 21h8"/></svg>
         </span>
         <h3 class="font-bold text-ink text-lg" data-en="Web Landing Pages" data-vi="Trang web giới thiệu">Web Landing Pages</h3>
-        <p class="mt-2 text-sm text-sub leading-relaxed" data-en="Fast, elegant marketing sites with HTML, Tailwind CSS and a touch of motion." data-vi="Trang giới thiệu nhanh, tinh tế bằng HTML, Tailwind CSS và một chút chuyển động."></p>
+        <p class="mt-2 text-sm text-sub leading-relaxed" data-en="Fast, elegant marketing sites with HTML, Tailwind CSS and a touch of motion." data-vi="Trang giới thiệu nhanh, tinh tế bằng HTML, Tailwind CSS và một chút chuyển động.">Fast, elegant marketing sites with HTML, Tailwind CSS and a touch of motion.</p>
       </div>
     </div>
   </div>
@@ -318,7 +297,7 @@
         </div>
         <p class="mt-4 text-sub leading-relaxed"
            data-en="Leading iOS development across Begamob's global portfolio — architecture, code quality, mentoring and shipping. The team's apps span AI tools, utilities, productivity and health, and are used by people in over a hundred countries."
-           data-vi="Dẫn dắt mảng phát triển iOS cho danh mục toàn cầu của Begamob — kiến trúc, chất lượng code, mentoring và đưa sản phẩm ra thị trường. Các ứng dụng của team trải dài từ công cụ AI, tiện ích, năng suất đến sức khỏe, phục vụ người dùng tại hơn một trăm quốc gia."></p>
+           data-vi="Dẫn dắt mảng phát triển iOS cho danh mục toàn cầu của Begamob — kiến trúc, chất lượng code, mentoring và đưa sản phẩm ra thị trường. Các ứng dụng của team trải dài từ công cụ AI, tiện ích, năng suất đến sức khỏe, phục vụ người dùng tại hơn một trăm quốc gia.">Leading iOS development across Begamob's global portfolio — architecture, code quality, mentoring and shipping. The team's apps span AI tools, utilities, productivity and health, and are used by people in over a hundred countries.</p>
 
         <div class="mt-5 grid grid-cols-3 gap-3">
           <div class="bg-mist rounded-2xl p-4 text-center">
@@ -353,7 +332,7 @@
         </div>
         <p class="mt-4 text-sub leading-relaxed"
            data-en="Designing, building and publishing my own iOS apps end-to-end — from idea and UI to App Store release, ASO and growth. Seven apps and counting across four categories."
-           data-vi="Tự thiết kế, lập trình và phát hành các ứng dụng iOS của riêng mình từ A đến Z — từ ý tưởng, giao diện đến phát hành trên App Store, ASO và tăng trưởng. Bảy ứng dụng và vẫn đang tiếp tục, trải dài bốn danh mục."></p>
+           data-vi="Tự thiết kế, lập trình và phát hành các ứng dụng iOS của riêng mình từ A đến Z — từ ý tưởng, giao diện đến phát hành trên App Store, ASO và tăng trưởng. Bảy ứng dụng và vẫn đang tiếp tục, trải dài bốn danh mục.">Designing, building and publishing my own iOS apps end-to-end — from idea and UI to App Store release, ASO and growth. Seven apps and counting across four categories.</p>
         <div class="mt-auto pt-5">
           <a href="https://apps.apple.com/us/developer/thuyet-luong/id1655884965" target="_blank" rel="noopener"
              class="inline-flex items-center gap-2 text-indigo font-semibold text-sm hover:gap-3 transition-all">
@@ -367,7 +346,7 @@
     <div class="reveal mt-12 flex items-end justify-between gap-4 flex-wrap">
       <div>
         <h3 class="text-xl font-bold text-ink" data-en="Standout apps I help lead" data-vi="Các app nổi bật mình dẫn dắt">Standout apps I help lead</h3>
-        <p class="text-sm text-sub mt-1" data-en="A selection from 20+ apps across Begamob's global App Store portfolio." data-vi="Một vài app tiêu biểu trong hơn 20 app thuộc danh mục App Store toàn cầu của Begamob."></p>
+        <p class="text-sm text-sub mt-1" data-en="A selection from 20+ apps across Begamob's global App Store portfolio." data-vi="Một vài app tiêu biểu trong hơn 20 app thuộc danh mục App Store toàn cầu của Begamob.">A selection from 20+ apps across Begamob's global App Store portfolio.</p>
       </div>
       <a href="https://apps.apple.com/us/developer/begamob-global-limited/id1581766117" target="_blank" rel="noopener" class="text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:gap-2.5 transition-all whitespace-nowrap">
         <span data-en="View all on App Store" data-vi="Xem tất cả trên App Store">View all on App Store</span>
@@ -598,7 +577,7 @@
       <div class="max-w-2xl">
         <p class="text-sm font-semibold tracking-widest uppercase text-primary" data-en="My Apps" data-vi="Ứng dụng của tôi">My Apps</p>
         <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight text-ink" data-en="Apps I designed & built" data-vi="Ứng dụng tôi thiết kế & xây dựng">Apps I designed &amp; built</h2>
-        <p class="mt-3 text-sub" data-en="My own products, live on the App Store." data-vi="Sản phẩm của riêng tôi, đang có mặt trên App Store."></p>
+        <p class="mt-3 text-sub" data-en="My own products, live on the App Store." data-vi="Sản phẩm của riêng tôi, đang có mặt trên App Store.">My own products, live on the App Store.</p>
       </div>
       <div class="flex flex-wrap gap-2" id="filters">
         <button class="filter-btn active rounded-full border border-line bg-white px-4 py-1.5 text-sm font-medium" data-filter="all"          data-en="All"          data-vi="Tất cả">All</button>
@@ -629,7 +608,7 @@
         </div>
         <p class="mt-4 text-sm text-sub leading-relaxed flex-1"
            data-en="For couples — count your days together, keep a private diary with photos & voice notes, and never miss a milestone. Sign in with Apple or Google."
-           data-vi="Dành cho các cặp đôi — đếm ngày bên nhau, viết nhật ký riêng tư kèm ảnh & ghi âm, không bỏ lỡ cột mốc nào. Đăng nhập bằng Apple hoặc Google."></p>
+           data-vi="Dành cho các cặp đôi — đếm ngày bên nhau, viết nhật ký riêng tư kèm ảnh & ghi âm, không bỏ lỡ cột mốc nào. Đăng nhập bằng Apple hoặc Google.">For couples — count your days together, keep a private diary with photos &amp; voice notes, and never miss a milestone. Sign in with Apple or Google.</p>
         <div class="mt-4 flex flex-wrap gap-1.5">
           <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">SwiftUI</span>
           <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">Firebase Auth</span>
@@ -654,7 +633,7 @@
         </div>
         <p class="mt-4 text-sm text-sub leading-relaxed flex-1"
            data-en="Free up gigabytes in seconds — smart duplicate & similar-photo detection, plus contact de-duping and vCard backup. Everything runs on-device."
-           data-vi="Giải phóng hàng GB bộ nhớ trong vài giây — phát hiện ảnh trùng/tương tự thông minh, dọn danh bạ trùng và sao lưu vCard. Mọi thứ xử lý ngay trên thiết bị."></p>
+           data-vi="Giải phóng hàng GB bộ nhớ trong vài giây — phát hiện ảnh trùng/tương tự thông minh, dọn danh bạ trùng và sao lưu vCard. Mọi thứ xử lý ngay trên thiết bị.">Free up gigabytes in seconds — smart duplicate &amp; similar-photo detection, plus contact de-duping and vCard backup. Everything runs on-device.</p>
         <div class="mt-4 flex flex-wrap gap-1.5">
           <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">SwiftUI</span>
           <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">PhotoKit</span>
@@ -679,7 +658,7 @@
         </div>
         <p class="mt-4 text-sm text-sub leading-relaxed flex-1"
            data-en="Vietnam national high-school exam prep: full mock tests, auto-grading with detailed solutions, a progress dashboard, periodic table and an AI explainer."
-           data-vi="Ôn luyện thi THPT Quốc gia: đề thi chuẩn cấu trúc, chấm điểm tự động kèm lời giải chi tiết, dashboard tiến trình, bảng tuần hoàn và trợ lý AI giải thích."></p>
+           data-vi="Ôn luyện thi THPT Quốc gia: đề thi chuẩn cấu trúc, chấm điểm tự động kèm lời giải chi tiết, dashboard tiến trình, bảng tuần hoàn và trợ lý AI giải thích.">Vietnam national high-school exam prep: full mock tests, auto-grading with detailed solutions, a progress dashboard, periodic table and an AI explainer.</p>
         <div class="mt-4 flex flex-wrap gap-1.5">
           <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">SwiftUI</span>
           <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">Firebase</span>
@@ -704,7 +683,7 @@
         </div>
         <p class="mt-4 text-sm text-sub leading-relaxed flex-1"
            data-en="Count down to the moments that matter — unlimited events, beautiful Home-Screen widgets and iCloud sync across iPhone, iPad and Apple Watch."
-           data-vi="Đếm ngược đến những khoảnh khắc quan trọng — sự kiện không giới hạn, widget đẹp trên màn hình chính và đồng bộ iCloud giữa iPhone, iPad và Apple Watch."></p>
+           data-vi="Đếm ngược đến những khoảnh khắc quan trọng — sự kiện không giới hạn, widget đẹp trên màn hình chính và đồng bộ iCloud giữa iPhone, iPad và Apple Watch.">Count down to the moments that matter — unlimited events, beautiful Home-Screen widgets and iCloud sync across iPhone, iPad and Apple Watch.</p>
         <div class="mt-4 flex flex-wrap gap-1.5">
           <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">SwiftUI</span>
           <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">WidgetKit</span>
@@ -729,7 +708,7 @@
         </div>
         <p class="mt-4 text-sm text-sub leading-relaxed flex-1"
            data-en="A simple, beautiful diary to capture the best moments of your day, with highly customizable themes and moods."
-           data-vi="Ứng dụng nhật ký đơn giản, đẹp mắt để ghi lại những khoảnh khắc đẹp nhất trong ngày, với giao diện và cảm xúc tuỳ biến cao."></p>
+           data-vi="Ứng dụng nhật ký đơn giản, đẹp mắt để ghi lại những khoảnh khắc đẹp nhất trong ngày, với giao diện và cảm xúc tuỳ biến cao.">A simple, beautiful diary to capture the best moments of your day, with highly customizable themes and moods.</p>
         <div class="mt-4 flex flex-wrap gap-1.5">
           <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">UIKit</span>
           <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">Core Data</span>
@@ -753,7 +732,7 @@
         </div>
         <p class="mt-4 text-sm text-sub leading-relaxed flex-1"
            data-en="A fast, powerful QR scanner — and a creator for your own personalized codes, your style."
-           data-vi="Trình quét QR nhanh, mạnh mẽ — và công cụ tạo mã QR cá nhân hoá theo phong cách của bạn."></p>
+           data-vi="Trình quét QR nhanh, mạnh mẽ — và công cụ tạo mã QR cá nhân hoá theo phong cách của bạn.">A fast, powerful QR scanner — and a creator for your own personalized codes, your style.</p>
         <div class="mt-4 flex flex-wrap gap-1.5">
           <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">UIKit</span>
           <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">AVFoundation</span>
@@ -777,7 +756,7 @@
         </div>
         <p class="mt-4 text-sm text-sub leading-relaxed flex-1"
            data-en="My very first App Store app — a highly customizable diary where you design the look you love."
-           data-vi="Ứng dụng đầu tay của mình trên App Store — nhật ký tuỳ biến cao, tự tạo giao diện bạn yêu thích."></p>
+           data-vi="Ứng dụng đầu tay của mình trên App Store — nhật ký tuỳ biến cao, tự tạo giao diện bạn yêu thích.">My very first App Store app — a highly customizable diary where you design the look you love.</p>
         <div class="mt-4 flex flex-wrap gap-1.5">
           <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">UIKit</span>
           <span class="chip rounded-md px-2 py-0.5 text-xs text-sub">Core Data</span>
@@ -807,7 +786,7 @@
         </span>
         <div class="flex-1">
           <h3 class="text-xl font-bold text-ink">GitHub · @thuyetngocluong</h3>
-          <p class="mt-1.5 text-sm text-sub leading-relaxed sm:max-w-xl" data-en="More code, experiments and this very website — all open on my GitHub profile." data-vi="Thêm code, các thử nghiệm và chính website này — tất cả đều công khai trên GitHub của mình."></p>
+          <p class="mt-1.5 text-sm text-sub leading-relaxed sm:max-w-xl" data-en="More code, experiments and this very website — all open on my GitHub profile." data-vi="Thêm code, các thử nghiệm và chính website này — tất cả đều công khai trên GitHub của mình.">More code, experiments and this very website — all open on my GitHub profile.</p>
         </div>
         <span class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all shrink-0">
           <span data-en="Visit profile" data-vi="Xem trang">Visit profile</span>
@@ -877,7 +856,7 @@
         <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white" data-en="Let's build something great." data-vi="Cùng nhau tạo ra điều tuyệt vời.">Let's build something great.</h2>
         <p class="mt-4 text-white/90 max-w-xl mx-auto leading-relaxed"
            data-en="Open to iOS roles, freelance apps and collaborations. Drop me a line — I usually reply within a day."
-           data-vi="Sẵn sàng cho các cơ hội iOS, dự án freelance và hợp tác. Hãy nhắn cho mình — mình thường phản hồi trong vòng một ngày."></p>
+           data-vi="Sẵn sàng cho các cơ hội iOS, dự án freelance và hợp tác. Hãy nhắn cho mình — mình thường phản hồi trong vòng một ngày.">Open to iOS roles, freelance apps and collaborations. Drop me a line — I usually reply within a day.</p>
 
         <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
           <a href="mailto:thuyetngocluong@gmail.com" class="inline-flex items-center gap-2 bg-white text-ink font-semibold px-6 py-3 rounded-full hover:bg-mist transition-colors">
