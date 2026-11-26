@@ -1,6 +1,6 @@
 # thuyetngocluong.github.io
 
-Personal site of Thuyet Luong (Zoro4rk), an iOS developer, served with GitHub Pages at
+Personal site of Lương Ngọc Thuyết, an iOS developer, served with GitHub Pages at
 <https://thuyetngocluong.github.io>.
 
 The site is plain static HTML. There is no build step: every file in this repository is
